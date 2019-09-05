@@ -1,0 +1,47 @@
+<!--<div class="items-title">-->
+  <!--<img src="../assets/images/item-title-bg.jpg" alt="">-->
+<!--</div>-->
+<div class="items-content">
+  <div class="container">
+    <h2 class="items-title" style="height: auto;padding-top: 60px">
+      检测项目
+    </h2>
+    <p class="items-txt">
+      顺唐生物坚持以用户健康为依托，精心提供药物反应、营养需求、运动基因等六大模块检测项目，并逐步完善针对国人的数据库和疾病风险预模型，实现精准预防。
+    </p>
+
+    <div *ngIf="!itemsArray || itemsArray.length==0 ">
+      <nz-empty></nz-empty>
+    </div>
+
+
+
+    <ul style="  padding: 40px 0;  margin: 0; margin-left: -10px;transition: 1s;;"    nz-row  nzType="flex" nzJustify="left" nzAlign="top"  >
+      <li class="items-li"     *ngFor="let item of itemsArray  index as i"  nz-col       [nzXs]="{ span: 24 }  "   [nzSm]="{ span: 24 }  "   [nzLg]="{ span: 7  }" >
+          <div (click)="changeItem(item)" style="cursor: pointer"  >
+            <div class="li-l">
+              <img style="width: 80px;height: 80px; object-fit: contain" [src]="item.img" alt="">
+            </div>
+            <div class="li-r">
+              <p class="li-r-tit">{{item.name}}</p>
+              <p class="li-r-span">{{item.child.length}}项</p>
+            </div>
+            <div class="li-icon">
+              <img *ngIf="!item.isSelect" src="assets/images/icon-down.png" alt="">
+              <img *ngIf="item.isSelect" src="assets/images/icon-up.png" alt="">
+            </div>
+          </div>
+
+          <ul style="padding: 0; margin : 20px 0"  *ngIf="item.isSelect"    >
+            <li  class="li-child-li" *ngFor="let cItem of item.child "    >
+              <p class="child-li-p">{{cItem}}</p>
+            </li>
+          </ul>
+      </li>
+
+
+
+    </ul>
+  </div>
+</div>
+

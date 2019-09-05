@@ -1,0 +1,194 @@
+<div style="width:100%;background:#f7f7f7;">
+    <nz-content class='container' nz-row>
+        <div class="inline-block" nz-col nzMd="6" [nzSm]="24">
+            <ul class="flexUl" >
+                <li style="border-bottom:1px solid #ddd;box-shadow: 2px 2px #ddd" nz-col  nzMd="24" [nzSm]="8" *ngFor="let item of navbarList index as i" (click)='changeItem(i,item)' [ngClass]="{ 'click': i == num }" class="tabbar">
+                    <span title>
+                    <img *ngIf="i == 0 && !item.isClick " src="../../../assets/img/about1.png" alt="">
+                    <img *ngIf="i == 1 && !item.isClick " src="../../../assets/img/contact.png" alt="">
+                    <img *ngIf="i == 2 && !item.isClick " src="../../../assets/img/news.png" alt="">
+                    <img *ngIf="i == 0 && item.isClick " src="../../../assets/img/about.png" alt="">
+                    <img *ngIf="i == 1 && item.isClick " src="../../../assets/img/contact1.png" alt="">
+                    <img *ngIf="i == 2 && item.isClick " src="../../../assets/img/news1.png" alt="">
+                    <span class="marginL" >{{item.name}} </span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    
+        <div  nz-col nzMd="18" class="inline-block" style="width:calc(80% - 40px);vertical-align: top;">
+            <div nz-col nzMd="24" [nzSm]="24" class="marginB" *ngIf="activeItem==0">
+                <div class="margin">
+                    <div class="flex-two">
+                        <div class="text displayNone">
+                            <span class="introduce_text">我们是谁 <br><span style="display: block;border-bottom: 2px solid #d7d7d8;width: 32px;height: 2px;"></span></span>
+                            <span class="introduce_text_two paddingB">/INTRODUTION</span><br>
+                            <span>
+                                顺唐生物科技（北京）有限公司是一家面向为中国人提供基因服务，为科学研究提供试剂耗材的综合型服务性机构。公司依托互联网+基因检测，构建生命大数据库，为用户建立起动态的管理体系，打造服务人民健康的系统工程。
+                            </span>
+                        </div>
+                        <!-- 这里为 响应式 下显示的文字 需要更换文案 -->
+                        <div class="imgDad">
+                            <img class="showcase" src="../../../assets/img/About_us_one.png" alt="">
+                        </div>
+                        <!-- 响应式页面 -->
+                        <div class="text display0">
+                            <span class="introduce_text">我们是谁<br><span style="display: block;border-bottom: 2px solid #d7d7d8;width: 32px;height: 2px;"></span></span>
+                            <span class="introduce_text_two paddingB">/INTRODUTION</span><br>
+                            <span>
+                                顺唐生物科技（北京）有限公司是一家面向为中国人提供基因服务，为科学研究提供试剂耗材的综合型服务性机构。公司依托互联网+基因检测，构建生命大数据库，为用户建立起动态的管理体系，打造服务人民健康的系统工程。
+                                </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 二 -->
+                <div class="margin">
+                    <div class="flex-two">
+                        <!-- 这里为 响应式 下显示的文字 需要更换文案 -->
+                        <div class="imgDad">
+                            <img class="showcase" src="../../../assets/img/About_us_two.png" alt="">
+                        </div>
+                        <div class="text">
+                            <span class="introduce_text">我们的业务<br><span style="display: block;border-bottom: 2px solid #d7d7d8;width: 32px;height: 2px;"></span></span>
+                            <span class="introduce_text_two paddingB">/BUISINESS</span><br>
+                            <span>
+                                基于领先的基因组学科研成果，顺唐生物建采用全球领先的检测设备进行测序，由遗传学团队进行检测分析，面向用户提供可读可用的基因检测报告。同时，基于科学研究的先进性，顺唐生物在技术服务及试剂耗材业务方面，不断研发，让生物科学技术惠及于人。
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 三 -->
+                <div class="margin">
+                    <div class="flex-two">
+                        <div class="text displayNone">
+                            <span class="introduce_text">我们的产品<br><span style="display: block;border-bottom: 2px solid #d7d7d8;width: 32px;height: 2px;"></span></span>
+                            <span class="introduce_text_two paddingB">/PRODUCT</span><br>
+                            <span>
+                                顺唐生物检测涵盖健康风险、营养需求、运动基因、个人特质、罕见遗传病及药物代谢等内容的数百个项目，以及技术服务和试剂耗材等综合性业务。
+                            </span>
+                        </div>
+                        <!-- 这里为 响应式 下显示的文字 需要更换文案 -->
+                        <div class="imgDad">
+                            <img class="showcase" src="../../../assets/img/About_us_three.png" alt="">
+                        </div>
+                        <div class="text display0">
+                            <span class="introduce_text">我们的产品<br><span style="display: block;border-bottom: 2px solid #d7d7d8;width: 32px;height: 2px;"></span></span>
+                            <span class="introduce_text_two paddingB">/PRODUCT</span><br>
+                            <span>
+                                顺唐生物检测涵盖健康风险、营养需求、运动基因、个人特质、罕见遗传病及药物代谢等内容的数百个项目，以及技术服务和试剂耗材等综合性业务。
+                                </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 四 -->
+                <div class="margin">
+                    <div class="flex-two">
+                        <!-- 这里为 响应式 下显示的文字 需要更换文案 -->
+                        <div class="imgDad">
+                            <img class="showcase" src="../../../assets/img/About_us_four.png" alt="">
+                        </div>
+                        <div class="text">
+                            <span class="introduce_text">我们的技术<br><span style="display: block;border-bottom: 2px solid #d7d7d8;width: 32px;height: 2px;"></span></span>
+                            <span class="introduce_text_two paddingB">/TECHNOLOGY</span><br>
+                            <span>
+                                顺唐生物实时保持数据、解读的真实性和权威性，及时更新数据库，保证用户拿到的结果永远是最新的。
+                            </span>
+                        </div>
+    
+                    </div>
+                </div>
+                <!-- 五 -->
+                <div class="margin">
+                    <div class="flex-two">
+                        <div class="text displayNone">
+                            <span class="introduce_text">我们的承诺<br><span style="display: block;border-bottom: 2px solid #d7d7d8;width: 32px;height: 2px;"></span></span>
+                            <span class="introduce_text_two paddingB">/PROMISE</span><br>
+                            <span>
+                                完善用户数据的管理和开发，在保证用户信息安全的前提下，顺唐生物将最大程度的发掘数据价值，并将所产生的收益回馈客户。
+                                </span>
+                        </div>
+                        <!-- 这里为 响应式 下显示的文字 需要更换文案 -->
+                        <div class="imgDad">
+                            <img class="showcase" src="../../../assets/img/About_us_five.png" alt="">
+                        </div>
+                        <div class="text display0">
+                            <span class="introduce_text">我们的承诺<br><span style="display: block;border-bottom: 2px solid #d7d7d8;width: 32px;height: 2px;"></span></span>
+                            <span class="introduce_text_two paddingB">/PROMISE</span><br>
+                            <span>
+                                完善用户数据的管理和开发，在保证用户信息安全的前提下，顺唐生物将最大程度的发掘数据价值，并将所产生的收益回馈客户。
+                                    </span>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+    
+            <div class="acitveItem" *ngIf="activeItem==1">
+                <div class="flex padding100">
+                    <div class="textAlign">
+                        <img class="contact" style="object-fit: cover;" src="../../../assets/img/qq.png" alt="QQ">
+                        <br> 官方QQ
+                    </div>
+                    <div class="textAlign">
+                        <img class="contact" style="object-fit: cover;" src="../../../assets/img/wb.png" alt="微博">
+                        <br> 官方微博
+                    </div>
+                    <div class="textAlign">
+                        <img class="contact" style="object-fit: cover;" src="../../../assets/img/wx.jpeg" alt="微信">
+                        <br> 官方微信
+                    </div>
+                </div>
+                <div class="emil">
+                    <img style="margin-right: 10px;width: 30px" src="../../../assets/img/emil.png" alt="">
+                    公司邮箱：shuntang-admin@shuntangbiotech.com
+                </div>
+                <div id="logo">
+                    <div>
+                        <img id="image" src="http://jns.img.bucket.ks3-cn-beijing.ksyun.com/img/img/658b8282-9850-4b77-a55b-a34d12ed9ffd.png" alt="">
+                        <div id="introduce">
+                            <span class="introduction">顺唐科技</span> <br>
+                            <!-- <span class="span">一句slogan一句slogan一句slogan一句slogan
+                                一句slogan一句slogan一句slogan</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="background:#fff;" *ngIf="activeItem==2 &&dataList">
+                <div class="flex-three" *ngFor="let data of dataList.articleList as index" [ngClass]="{'pad':index != 0}">
+                    <div style="margin-left:10px;">
+                        <img (click)="jump(data.id)" class="three-img" src="{{data.img.url}}" alt="">
+                    </div>
+                    <!--  -->
+                    <div (click)="jump(data.id)" class="text-two">
+                        <div class="title" (click)="list()">{{data.title}}</div>
+                        <div class="avt">
+                            {{data.summary}}
+                            <!-- 多运动会脱发，这是真的吗？多运动会脱发，这是真的吗？多运动会脱发，这是真的吗？多运动会
+                                脱发，这是真的吗？多运动会脱发，这是真的吗？多运动会脱发，这是真的吗？多运动会脱发，这
+                                是真的吗？多运动会脱发，这是真的吗？多运动会脱发，这是真的吗？多运动会脱发，这是真的
+                                吗？多运动会脱发，这是真的吗？多运动会脱发，这是真的吗... -->
+                        </div>
+                        <div>
+                            <span style="color:#949698;font-size: 12px">发布者: <span class="mgL10">{{data.author}}</span></span><span class="time">{{data.createAt | date: "yyyy-MM-dd"}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="page">
+                        <!-- <nz-pagination nzShowQuickJumper (keyup)="sure($event)" (nzPageIndexChange)='change($event)' [nzPageIndex]="params.page" [nzPageSize]="params.size" [nzTotal]="total">
+                            </nz-pagination> -->
+                    <nz-pagination   (nzPageIndexChange)='change($event)' [nzPageIndex]="params.page" [nzPageSize]="params.size" [nzTotal]="total">
+                    </nz-pagination>
+                    <div style="margin:0 10px;">
+                        跳至<input class="pageInput" [(ngModel)]="pageTotal" type="number"> 页
+                    </div>
+                    <span class="sure" (click)="ofCouse()">
+                        确定
+                    </span>
+                </div>
+            </div>
+        </div>
+    
+    
+    
+    </nz-content>
+</div>

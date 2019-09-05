@@ -1,0 +1,50 @@
+.agreeMain{
+  background: #fff;
+  padding: 35px 0 ;
+  .agreeMain-tit{
+    font-size: 32px;
+    line-height: 90px;
+    color: #30353f;
+    text-align: center;
+  }
+  .agreeMain-p{
+    font-size: 14px ;
+    color:#30353f ;
+  }
+}
+.font-666{
+  color: #666 !important;
+}
+.agreeMain-wrap{
+  margin-bottom: 25px;
+}
+.pad-0-18{
+  margin: 0 180px;
+}
+.container {
+  max-width: 1200px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto!important;
+  margin-left: auto!important;
+}
+@media only screen and (max-width: 1400px) {
+  .pad-0-18{
+    margin: 0 180px!important;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .pad-0-18{
+    margin: 0 120px!important;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .pad-0-18{
+    margin: 0 60px!important;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .pad-0-18{
+    margin: 0  20px!important;
+  }
+}

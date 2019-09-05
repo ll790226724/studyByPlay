@@ -1,0 +1,19 @@
+<div *ngIf="data" class="margin40">
+    <!-- <img class="oneImg" src="{{data.img.url}}" alt=""> -->
+    <div class="flex">
+        <div class="title">
+            {{data.title}}
+        </div>
+        <div class="author">
+            <!-- <span>{{data.author}}</span> <span class="marginL">{{data.createAt | date: "yyyy-MM-dd"}}</span> -->
+        </div>
+        <div *ngFor="let item of data.content as index">
+            <div *ngIf="item.value" class="value">
+                {{item.value}}
+            </div>
+            <div *ngIf="item.imgUrl.length !== 0 " class="url">
+                <img class="detailImg" src="{{item.imgUrl[0].url}}" alt="">
+            </div>
+        </div>
+    </div>
+</div>

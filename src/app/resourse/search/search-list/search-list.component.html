@@ -1,0 +1,121 @@
+
+
+
+
+<nz-spin [nzSpinning]="isSpinning">
+  <nz-header style="background: #fff;border-top: 1px solid #e1e1e1">
+
+    <ul nz-menu [nzMode]="'horizontal'" class='container  sheader-ul' style="   border: none;line-height: 60px; background: #fff;outline: none;  text-align: left; padding: 0;position: relative;">
+      <li *ngFor=" let item of itemList  index as i" (click)="changeTab(item,i)" nz-menu-item [routerLinkActive]='["ant-menu-item-selected"]' style="color: black;font-size: 16px ;outline: none;position: relative;">
+        {{item.name}}({{item.itemLength}})
+
+        <span class="sheader-li-select" *ngIf="item.isSelect"></span>
+      </li>
+    </ul>
+  </nz-header>
+
+
+  <div class="shopList" *ngIf="itemList[0]['isSelect'] ">
+    <div class="container">
+      <div *ngIf="!listData || listData.length==0 " style="padding:  50px 0 ">
+        <nz-empty></nz-empty>
+      </div>
+      <ul>
+        <li class="shopList-li" style="position: relative;" *ngFor="let item of listData " [routerLink]="['/shop/detail/'+item.id]">
+          <div class="item-wrap">
+            <div class="li-item">
+              <img style="object-fit: contain; height: 140px" [src]="item.img" alt="">
+              <h2 style="padding:  0 10px;height: 72px;">{{item.name |  stringLenFilter:18 }}</h2>
+
+            </div>
+            <div class="li-item-content">
+              <h2 >{{item.name |  stringLenFilter:18 }}</h2>
+              <p> {{item.info  |  stringLenFilter:70 }}</p>
+              <div class="li-item-price">
+                <div class="item-price"><span>¥</span>{{item.price}}</div>
+                <div>
+                  <img style="cursor: pointer" src="assets/img/buy.png" alt=""     (click)="createTplModal(tplTitle, tplContent, tplFooter,$event,item.id)">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </li>
+      </ul>
+
+
+      <div style="text-align: right;margin-right: 20px;margin-top: 20px" *ngIf="itemList[0]['itemLength']!=0">
+        <nz-pagination (nzPageIndexChange)="changePage($event,1)" [nzPageIndex]="searhParams.page" [nzTotal]="total" [nzPageSize]="size"></nz-pagination>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="news" *ngIf="itemList[1]['isSelect'] ">
+    <div class="container">
+      <div *ngIf="itemList[1]['itemLength']==0" style="padding:  50px 0 ">
+        <nz-empty></nz-empty>
+      </div>
+
+      <ul>
+
+        <li class="news-li" *ngFor=" let item of newsList;" (click)="jump(item.id)" style="cursor: pointer">
+
+          <div class="news-li-l">
+            <img src="{{item.img.url}}" alt="">
+          </div>
+
+          <div class="news-li-r">
+            <p class="news-li-r-tit">
+              {{item.title}}
+            </p>
+            <p class="news-li-r-main">
+              {{item.summary}}
+            </p>
+
+            <p class="news-li-r-time">
+              {{item.updateAt | date:'yyyy-MM-dd HH:mm:ss'}}
+            </p>
+          </div>
+        </li>
+      </ul>
+
+
+      <div style="text-align: right;margin-right: 20px;margin-top: 20px" *ngIf="itemList[1]['itemLength']!=0">
+        <nz-pagination (nzPageIndexChange)="changePage($event,2)" [nzPageIndex]="searhParams.page" [nzTotal]="total" [nzPageSize]="size"></nz-pagination>
+      </div>
+
+    </div>
+  </div>
+</nz-spin>
+
+<ng-template #tplTitle >
+  <div style="text-align: right;font-size: 16px;padding:  10px">
+    <i style="cursor: pointer" nz-icon type="close" (click)="madalCancel()"></i>
+  </div>
+</ng-template>
+<ng-template #tplContent>
+  <div  nz-row>
+    <div  nz-col [nzXs]="24"   [nzSm]='12'style="font-size: 14px; text-align: center">
+      <img style="width: 100%;  max-width: 140px  " src="../../../../assets/img/Wxcode.jpg" alt="">
+      <p style="text-align: center; color: rgb(102, 102, 102);padding-bottom: 15px;border-bottom: 1px solid #e1e1e1 ">官方微信</p>
+      <p style="text-align: center;margin: 0">(010)59478634</p>
+      <p style="text-align: center">客服电话</p>
+    </div>
+    <div nz-col  [nzXs]="24" [nzSm]='12'   style="font-size: 14px; text-align: center">
+      <h2>您好</h2>
+      <p>感谢您的信任和青睐，</p>
+      <p>请联系我们，</p>
+      <p>购买您心仪的产品</p>
+
+
+      <button nz-button [nzType]="'primary'"   (click)="modalClick()"   style="height: 40px;background: #2666f8;margin-top: 40px"> 更多联系方式</button>
+
+    </div>
+
+  </div>
+
+
+
+</ng-template>

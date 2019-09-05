@@ -1,0 +1,177 @@
+<nz-layout class="layout" xmlns="http://www.w3.org/1999/html">
+    <nz-header class="header-mail">
+        <div class="container  padd-0">
+            <span class="main-header-text">
+                邮箱： shuntang-admin@shuntangbiotech.com
+            </span>
+
+
+        </div>
+    </nz-header>
+
+
+    <nz-header class="header-navBarList">
+      <div class="inline-block media-left-logo " style="position: absolute; left: 10px; z-index: 9">
+        <img (click)="mainReload()" class="outline-none" src="../../assets/images/logo1.png" alt="">
+      </div>
+
+
+            <div class="inline-block menu-btn  media-menu-btn">
+
+              <span class="inline-block header-menu-login" *ngIf="!hasLogin">
+                    <a routerLink="/login/1">登录</a>
+                    <span class="padd-0-10">|</span>
+                    <a routerLink="/login/2">注册</a>
+                </span>
+              <span *ngIf="hasLogin">
+                    <span class="inline-block  user-Btn" style="vertical-align: top">
+                      <div  *ngIf="!userData['img']" class="inline-block">
+                           <img class="user-Btn-img" src="../assets/img/icon-ava.jpg" alt="">
+                      </div>
+
+                        <img *ngIf="userData['img']" class="user-Btn-img" [src]="userData['img']" alt="">
+                        <ul class="user-info">
+                            <li  class="cursor-pointer" routerLink="/personal/0">{{userName }}</li>
+                          <!--                            <li class="cursor-pointer" >个人中心</li>-->
+                            <li class="cursor-pointer" (click)="loginOut()">退出</li>
+                        </ul>
+                    </span>
+                </span>
+              <i nz-icon nzType="unordered-list" nzTheme="outline"></i>
+
+              <span class="inline-block" >
+                  <button nz-button style="margin-top: 15px;margin-left: 10px"  (click)="changeMenu()">
+                <i nz-icon [nzType]="'unordered-list'" ></i>
+              </button>
+
+              </span>
+
+
+
+            </div>
+        <ul nz-menu [nzMode]="'horizontal'" class='container  header-ul'  [ngClass]="{'display-none':!isCollapsed}">
+            <li nz-menu-item class="header-ul-li  header-logo logo-media">
+                <img (click)="mainReload()" class="outline-none" src="../../assets/images/logo1.png" alt="">
+            </li>
+
+
+            <li nz-menu-item [routerLinkActive]='["ant-menu-item-selected"]' class="header-menu-item" [routerLink]="['/home']">首页</li>
+            <li nz-menu-item [routerLinkActive]='["ant-menu-item-selected"]' class="header-menu-item" [routerLink]="['/how']">如何检测 </li>
+            <li nz-menu-item [routerLinkActive]='["ant-menu-item-selected"]' class="header-menu-item" [routerLink]="['/items']">检测项目</li>
+            <li nz-menu-item [routerLinkActive]='["ant-menu-item-selected"]' class="header-menu-item" [routerLink]="['/example']">报告示例</li>
+            <li nz-menu-item [routerLinkActive]='["ant-menu-item-selected"]' class="header-menu-item" [routerLink]="['/shop']">商品展示</li>
+            <li nz-menu-item [routerLinkActive]='["ant-menu-item-selected"]' class="header-menu-item position header-logo" routerLink="/introduction">联系我们
+                    <!-- routerLink="/introduction" -->
+                <ul class="introduction_three">
+                    <li class="hover" (click)="about()">关于我们</li>
+                    <li class="hover" (click)="phone()">联系我们</li>
+                    <li class="hover" (click)="news()">新闻动态</li>
+                </ul>
+            </li>
+            <li class="header-menu-search">
+                <nz-input-group [nzSuffix]="suffixTemplate" class="header-searchInput">
+                    <input id="searchInput" [(ngModel)]="searchVal" (keyup.enter)="keyUpSearch()"
+                        (focus)="inputIsClick=true" (blur)="inputIsClick=false" class="header-searchInput-raduis"
+                        nz-input placeholder="请输入内容">
+
+                </nz-input-group>
+
+                <span class="inline-block header-menu-login" *ngIf="!hasLogin">
+                    <a routerLink="/login/1">登录</a>
+                    <span class="padd-0-10">|</span>
+                    <a routerLink="/login/2">注册</a>
+                </span>
+                <span *ngIf="hasLogin">
+                    <span class="inline-block  user-Btn  menu-user-Btn">
+                      <div  *ngIf="!userData['img']" class="inline-block">
+                           <img class="user-Btn-img" src="../assets/img/icon-ava.jpg" alt="">
+                      </div>
+
+                        <img *ngIf="userData['img']" class="user-Btn-img" [src]="userData['img']" alt="">
+                        <ul class="user-info">
+                            <li  class="cursor-pointer" routerLink="/personal/0">{{userName }}</li>
+<!--                            <li class="cursor-pointer" >个人中心</li>-->
+                            <li class="cursor-pointer" (click)="loginOut()">退出</li>
+                        </ul>
+                    </span>
+                </span>
+            </li>
+        </ul>
+
+        <ng-template #suffixTemplate><i (click)="keyUpSearch()" class="cursor-pointer f-18" nz-icon nz-tooltip
+                type="search"></i></ng-template>
+
+
+
+    </nz-header>
+
+    <div class="right-bar" [ngClass]="{'bar':isBar}">
+        <div class="about-us"  (click)="clickBar(1)">联系我们
+            <i nz-icon nzType="double-right" *ngIf="isBar" nzTheme="outline"></i>
+            <i nz-icon nzType="double-left" *ngIf="!isBar" nzTheme="outline"></i>
+        </div>
+        <div class="content">
+            <div class="t" [routerLink]="['/scientific']">
+                <div class="images"></div>
+                <div class="title">科研入口</div>
+                <div class="cont">试剂耗材、技术服务、 仪器设备</div>
+            </div>
+            <div class="b">
+                <div class="images"></div>
+                <div class="title">邮箱</div>
+                <div class="cont">shuntang-admin@shuntangbiotech.com</div>
+            </div>
+        </div>
+    </div>
+    <div class="main-padding-top-100">
+        <router-outlet></router-outlet>
+    </div>
+
+
+    <nz-footer class="text-center">
+        <div class="footer-center">
+            <div class="footer-center-flex" nz-row nzType="flex" nzJustify="space-between">
+                <div class="footer-left" nz-col>
+                    <div><span class="font-size-weight padd-r-20 padd-b-30">联系我们</span><span></span></div>
+                    <div><span class="padd-r-20  ">QQ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>2450305613</span></div>
+                    <div><span class="padd-r-20  ">邮箱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                      <span>shuntang-admin@shuntang<br>
+                        biotech.com</span></div>
+                </div>
+                <div class="footer-centre" nz-col>
+                    <ul class="margin-right-140px">
+                        <li class="font-size-weight padd-b-30"><span>关于产品</span></li>
+                        <li><a [routerLink]="['/shop']">商品展示</a></li>
+                        <li><a [routerLink]="['/how']">如何检测</a></li>
+                        <li><a [routerLink]="['/example']">报告示例</a></li>
+                        <li><a href="home#peopleStory">用户故事</a></li>
+                    </ul>
+                    <ul class="margin-right-140px">
+                        <li class="font-size-weight padd-b-30"><span>关于我们</span></li>
+                        <li><a (click)="news()">新闻动态</a></li>
+                        <li><a (click)="about()">关于我们</a></li>
+                        <li><a (click)="phone()">联系我们</a></li>
+                    </ul>
+                    <ul>
+                        <li class="font-size-weight padd-b-30"><span>法侓法规</span></li>
+                        <li><a [routerLink]="['/PrivacyProtection']">用户协议</a></li>
+                        <li><a [routerLink]="['/personalAgree']">隐私保护</a></li>
+                        <li><a [routerLink]="['/PriceProtection']">价格保护</a></li>
+                        <li><a [routerLink]="['/ServiceAgreement']">服务协议</a></li>
+                    </ul>
+                </div>
+
+
+
+                <div class="footer-right" nz-col>
+                    <div class="footer-right-img"><img src="../assets/images/001.png" alt=""></div>
+                    <div><span>扫码关注公众号</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-footer"><span>©顺唐生物</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>京ICP备19029711号-1</span></div>
+
+
+
+    </nz-footer>
+</nz-layout>

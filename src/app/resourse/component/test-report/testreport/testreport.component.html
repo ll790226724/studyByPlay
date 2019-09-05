@@ -1,0 +1,46 @@
+<div class="example">
+  <div class="container">
+    <div class="updata">
+      <div class="example-l" (click)="add()">
+        <div class="img" >
+          <img src="assets/images/down.png">
+        </div><span>下载</span>
+      </div>
+    </div>
+    <div class="example-r">
+      <pdf-viewer [src]="par.pdfUrl" [original-size]="false"></pdf-viewer>
+    </div>
+    <div class="example-r" *ngIf="par.pdfUrl == ''">
+      <div class="example-r-content">
+        <h2 class="example-r-tit">{{test.name}}</h2>
+        <div>
+          <img src="assets/images/test-li-t-icon.png" alt="">
+        </div>
+      </div>
+
+      <div class="example-r-content  example-ul">
+        <ul>
+          <li *ngFor="let item of reportLi" (click)="getReportLi(item.id)">
+            <div class="example-li-l">
+              <img src="{{item.img}}" alt="">
+            </div>
+            <div class="example-li-r">
+              <div class="example-li-r-txt">
+                <p class="example-li-r-tit">{{item.name}}</p>
+                <p class="example-li-r-content">{{item.info}}</p>
+              </div>
+              <div class="example-li-len">
+                <p>
+                  {{item.itemLength}} <br>
+                  <span>项目</span>
+                </p>
+
+              </div>
+
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,87 @@
+<div style="background: #fff">
+  <div class="how-bg">
+    <img style="object-fit: cover"  class="how-img" src="assets/images/how-bg.jpg" alt="">
+    <div class="container" style="position: relative;">
+      <div class="how-title">
+        <h2 class=" item-title" style="color: #fff;line-height: 1">
+          在顺唐生物开展体验
+        </h2>
+<!--        <p class="how-p">这里是文案一段很棒的文案，而且字数也够</p>-->
+      </div>
+    </div>
+
+  </div>
+
+  <div class="how-container">
+    <ul>
+      <li nz-row>
+        <div class="how-list-l"   nz-col [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 9 }">
+          <img style="width: 80%" src="assets/img/how-shop.png" alt="">
+        </div>
+        <div class="how-list-r"   nz-col [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 15  }">
+          <div style="display: inline-block;line-height: 1000px">
+            <h2 class="item-title" style="text-align: left">1. 购买流程</h2>
+            <p class="how-list-r-p">
+              消费者在产品官网购买检测产品注册并绑定账号。
+            </p>
+          </div>
+        </div>
+      </li>
+
+      <li nz-row>
+        <div class="how-list-r" style="background: #ebecf0"   nz-col [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 15 }">
+          <div style="display: inline-block;line-height: 1000px">
+            <h2 class="item-title" style="text-align: left">2 . 口腔取样</h2>
+            <p class="how-list-r-p">
+              客户收到样本采集套装以后，严格按照采样说明书采取口腔上皮细胞样本，并将样本放置于保存管中寄回。
+            </p>
+          </div>
+        </div>
+        <div class="how-list-l"  nz-col [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 9 }">
+          <img style="max-width: 420px;width: 80%" src="assets/img/how-soup.png" alt="">
+        </div>
+
+      </li>
+
+      <li  nz-row>
+        <div class="how-list-l"  nz-col [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 9 }">
+          <img style="max-width: 420px;width: 80%"  src="assets/img/how-service.png" alt="">
+        </div>
+        <div class="how-list-r" style="background: #ebecf0"  nz-col [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 15 }">
+          <div style="display: inline-block;line-height: 1000px">
+            <h2 class="item-title" style="text-align: left">3. 等待结果</h2>
+            <p class="how-list-r-p">
+              对寄回样本进行质检、合格以后上机检测，检测报告将在10-15个工作日内推送至消费者的绑定账号中。
+            </p>
+          </div>
+        </div>
+      </li>
+      <li  nz-row>
+        <div class="how-list-r"      nz-col [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 15 }" >
+          <div style="display: inline-block;line-height: 1000px">
+            <h2 class="item-title" style="text-align: left">4. 科技展现</h2>
+            <p class="how-list-r-p">
+              顺唐生物采用国际先进illumina设备、运用多种测序方法、自建高精度疾病风险预测模型，实现精准风险，测序准确率可达99%。
+            </p>
+          </div>
+        </div>
+        <div class="how-list-l" nz-col [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 9 }">
+          <img  style="max-width: 420px;width: 80%" src="assets/img/how-people.jpg" alt="">
+        </div>
+      </li>
+
+    </ul>
+
+  </div>
+
+</div>
+
+<div class="how-report">
+  <div class="container">
+    <h2 class="item-title">5.查看报告</h2>
+    <p>生成检测报告平均需要2-3周的时间。您可以登录顺唐生物官网查看。在这之前，您可以登录账号 查看检测进度。</p>
+    <p style="margin-top: 60px">顺唐生物会不断更新检测项目，为您提供持续优化的检测结果</p>
+
+    <button nz-button [nzType]="'primary'"   [routerLink]="['/shop']"    style="height: 50px;"> 购买基因服务</button>
+  </div>
+</div>

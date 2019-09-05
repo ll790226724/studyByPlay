@@ -1,0 +1,82 @@
+<div class="home">
+    <div *ngIf="!show">
+        <span class="old">原手机号验证</span>
+        <div class="plan-box">
+                <div class="flex-column-center">
+                  <div class="plan-circle margin-right-30 z-index-100">1</div>
+                  <div class="margin-right-30 color-6997ff"><span>原手机验证</span></div>
+                </div>
+                <div class="plan-line display-none-800"></div>
+                <div class="plan-line background-color-eee"></div>
+                <div class="flex-column-center">
+                  <div class="plan-circle margin-left-30 z-index-100 background-color-eee" >2</div>
+                  <div class="margin-left-30"><span>新手机绑定</span></div>
+                </div>
+                <div class="plan-line margin-left-30 background-color-eee"></div>
+                <div class="plan-line background-color-eee display-none-800"></div>
+                <div class="flex-column-center">
+                  <div class="plan-circle margin-left-30 z-index-100 background-color-eee">3</div>
+                  <div class="margin-left-30"><span>完成</span></div>
+                </div>
+              </div>
+        <div class="phone">
+            <input [(ngModel)]="params.mobile" disabled class="ipt1" style="cursor: not-allowed;background: #fff;" placeholder="请输入手机号" type="text">
+            <span *ngIf="!class" (click)='code()' class="test">{{test}}</span>
+            <span *ngIf="class" [ngClass]="{ 'no' : class }" class="test" style="color: rgba(0, 0, 0, 0.65);">{{test}}</span>
+        </div>
+        <div class="wrning" *ngIf="!text">如无法自主修改，请 <span style="cursor: pointer;color:#6997ff" (click)="phone()">联系客服</span> 帮您解决</div>
+        <div class="wrningError" *ngIf="text">{{text}}</div>
+        <div class="marginB">
+            <div class="phone marginB10">
+                <input [(ngModel)]="twoCode.verify" class="testCode" placeholder="请输入验证码" type="text">
+            </div>
+            <div *ngIf="show twoError">{{twoError}}</div>
+        </div>
+        <button class="subm" (click)="subm()" style="cursor: pointer">下一步</button>
+    </div>
+
+    <!-- 更换手机号 -->
+    <div *ngIf="show&&subscribe==false">
+        <span class="news">新手机号绑定</span>
+        <div class="plan-box">
+                <div class="flex-column-center">
+                  <div class="plan-circle margin-right-30 z-index-100">1</div>
+                  <div class="margin-right-30 color-6997ff"><span>原手机验证</span></div>
+                </div>
+                <div class="plan-line display-none-800"></div>
+                <div class="plan-line"></div>
+                <div class="flex-column-center">
+                  <div class="plan-circle margin-left-30 z-index-100">2</div>
+                  <div class="margin-left-30 color-6997ff"><span>新手机绑定</span></div>
+                </div>
+                <div class="plan-line margin-left-30"></div>
+                <div class="plan-line background-color-eee display-none-800"></div>
+                <div class="flex-column-center">
+                  <div class="plan-circle margin-left-30 z-index-100 background-color-eee">3</div>
+                  <div class="margin-left-30"><span>完成</span></div>
+                </div>
+              </div>
+        <div class="phone">
+            <input [(ngModel)]="newMobile.mobile" class="twoIphon" (blur)="testPhone()" placeholder="请输入新的手机号" type="text">
+        </div>
+        <div class="marginB">
+            <div class="phone">
+                <input [(ngModel)]="newTwoCode.verifyNew" class="ipt1" placeholder="请输入验证码" type="text">
+                <span *ngIf="!classNo" [ngClass]="{ 'no' : classNo}" (click)='newCode()' class="test">{{testTwo}}</span>
+                <span *ngIf="classNo" [ngClass]="{ 'no' : classNo}" (click)='newCode()' class="test" style="color: rgba(0, 0, 0, 0.65);">{{testTwo}}</span>
+            </div>
+           
+        </div>
+        <button class="subm " (click)="twoSubm() " style="cursor: pointer">下一步</button>
+    </div>
+    <div *ngIf="subscribe">
+        <div class="marginB">
+            <div style="padding: 100px 0 20px 0">
+                <img  style="outline: none"   src="assets/images/002.png" alt="">
+            </div>
+            <div style="padding-bottom: 120px"><span>恭喜你，换绑成功！<span style="color:#2666f8">{{dateJump}}</span> 秒后自动为您跳转</span></div>
+            <button class="subm " (click)="jump() ">立即跳转</button>
+        </div>
+       
+    </div>
+</div>

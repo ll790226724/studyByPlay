@@ -1,0 +1,957 @@
+[nz-carousel-content] {
+    text-align: center;
+    height: 1560px;
+    line-height: 160px;
+    background: #364d79;
+    color: #fff;
+    overflow: hidden;
+}
+
+h3 {
+    color: #fff;
+}
+li{
+    outline: none;
+}
+.Center {
+    text-align: center
+}
+
+.loginInput {
+    width: 380px;
+    padding-left: 0;
+    font-size: 14px;
+}
+
+.hidd {
+    visibility: hidden;
+    color: #5074ed;
+    margin-left: 10px;
+}
+
+.hB {
+    color: #5074ed;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.loginInput:focus {
+    border-color: #40a9ff;
+    outline: 0;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0) !important;
+    border-right-width: 1px !important;
+}
+
+.login-tabBtn {
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 0px;
+    color: black;
+}
+
+.login-btn>.ant-radio-button-wrapper-checked {
+    color: black;
+    border-bottom: 2px solid #2666f8 !important;
+}
+
+.ant-radio-button-wrapper:not(:first-child)::before {
+    display: none;
+}
+
+.login-form-button {
+    width: 100%;
+    line-height: 50px;
+    height: 50px;
+    //color: #2666f8;
+    border-radius: 5px;
+}
+
+.container {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.containers{
+    display: flex;
+    justify-content: space-between;
+}
+.list {
+    width: 18%;
+    background: #fff;
+}
+
+.list ul {
+    width: 100%
+}
+
+.list ul li {
+    list-style-type: none;
+}
+
+.main {
+    width: 80%;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.head {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.textAlign {
+    text-align: center;
+}
+
+.twoIcon {
+    font-size: 70px;
+    background: #dcdcdc;
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.oneIcon {
+    font-size: 100px;
+    background: #dcdcdc;
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.pd20 {
+    padding-left: 20px;
+}
+
+.tips {
+    height: 85px;
+    color: #000;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 85px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 60px;
+}
+
+.marginL {
+    margin-left: 10px
+}
+
+.ftMg {
+    width: 50%;
+    margin: 0 auto;
+    font-size: 16px;
+    margin-bottom: 30px;
+    border: none;
+    text-align: center;
+}
+
+.color {
+    color: #949698;
+}
+
+.margin {
+    margin-right: 65px
+}
+
+.edit {
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    background: #2b5fff;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    float: right
+}
+
+.top {
+    cursor: pointer;
+    float: left;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #2b5fff;
+    font-size: 16px;
+    margin-right: 80px;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #2b5fff;
+    outline: none;
+}
+
+.ipt {
+    display: inline-block;
+    width: 240px;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 15px;
+    color: #333333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: left
+}
+
+.borders {
+    border: none
+}
+
+.border {
+    border: none;
+    color: #A8AAAB
+}
+
+.background {
+    background: #f4f4f4
+}
+
+.btn-father {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 65px;
+    width: 50%;
+    height: 120px;
+    margin: 0 auto;
+}
+
+//基因盒
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-content: centrer;
+    font-size: 18px;
+    color: #000;
+}
+
+.contact {
+    width: 130px;
+    height: 130px
+}
+
+#logo {
+    position: relative;
+    top: 0;
+    padding: 0 90px;
+}
+
+#image {
+    width: 100%;
+}
+
+.introduction {
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#introduce {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.span {
+    color: #fff;
+    font-size: 14px;
+}
+
+//我的基因盒
+.gene-box-head {
+    padding: 25px 0;
+    margin: 0 0 20px 0;
+    text-align: center;
+    background: #fff;
+    outline: none;
+}
+
+.gene-box-head .binding {
+    width: 160px;
+    padding: 10px 0;
+    margin: 0 auto;
+    text-align: center;
+    background: #ff8745;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.gene-box-head .binding div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.gene-box-content .l .select-binding {
+    color: blue;
+    cursor: pointer;
+}
+
+.gene-box-content .r {
+    padding: 50px;
+    margin-bottom: 30px;
+    background: #fff;
+    .red {
+        font-size: 16px;
+        color: #fd454e;
+    }
+}
+
+.gene-box-content .r .one-line {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.gene-box-content .r .pay {
+    color: #5074ed;
+    cursor: pointer;
+}
+
+.marginT {
+    margin-top: 10px
+}
+
+.marginR {
+    margin-right: 10px;
+}
+
+.mg10 {
+    margin-bottom: 10px
+}
+
+.mg40 {
+    margin-bottom: 40px
+}
+
+.login {
+    margin-bottom: 115px
+}
+
+.mobile {
+    cursor: not-allowed;
+}
+
+.nick {
+    visibility: hidden;
+    width: 213px;
+}
+
+.wrning {
+    text-align: center;
+    margin-bottom: 45px;
+    color: red
+}
+
+.colora4 {
+    color: #a4a5a7
+}
+
+.font12 {
+    font-size: 12px
+}
+
+.color-red {
+    color: red
+}
+
+.gene-box-content .r .report-li {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.gene-box-content .r .pay img {
+    width: 20px;
+}
+
+.gene-box-content .pay {
+    margin: 30px auto;
+    text-align: center;
+}
+
+.gene-box-content .pay button {
+    width: 160px;
+    height: 40px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.gene-box-content .pay .pay-icon {
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.gene-box-content .pay .pay-text {
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.gene-box-content .r .report-li img {
+    width: 240px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.gene-box-content .r .report-li div {
+    margin: 5px 0;
+}
+
+.flex-two {
+    display: flex;
+    justify-content: space-between;
+}
+
+.introduce_text {
+    display: inline-block;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #d7d7d8;
+    font-size: 20px;
+    color: #000;
+    font-weight: bold
+}
+
+.introduce_text_two {
+    display: inline-block;
+    font-size: 18px;
+    color: #949698;
+}
+
+.tabbar {
+    height: 60px;
+    background: #fff;
+    text-align: center;
+    line-height: 60px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+:host ::ng-deep .ant-input{
+    box-shadow: 2px #fff;
+    box-sizing: unset;
+    display: inline-block;
+    width: 215px;
+    height: 25px;
+    line-height: 35px;
+    padding-left: 15px;
+    color: #333333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: left;
+}
+.birthday{
+    box-sizing: initial;
+}
+.ant-calendar-picker-input{
+    box-sizing: initial !important;
+}
+.text {
+    width: 50%;
+    height: 300px;
+    background: #fff;
+    padding: 70px 20px 20px 20px;
+}
+
+.click {
+    background: #2666f8;
+    color: #fff;
+}
+
+.text-two {
+    padding: 20px;
+}
+
+.title {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.avt {
+    display: inline-block;
+    color: #e7e8e8;
+    font-size: 14px;
+    padding-bottom: 50px;
+}
+
+.flex-three {
+    display: flex;
+    justify-content: space-between;
+}
+
+.showcase {
+    width: 100%;
+    height: 100%;
+}
+
+.imgDad {
+    width: 50%;
+    height: 300px;
+    position: relative;
+}
+
+.display0 {
+    display: none;
+}
+
+.flexDad {
+    vertical-align: top;
+}
+
+.inline-block {
+    width: 200px;
+}
+
+[nz-carousel-content] {
+    text-align: center;
+    height: 1560px;
+    line-height: 160px;
+    background: #364d79;
+    color: #fff;
+    overflow: hidden;
+}
+
+h3 {
+    color: #fff;
+}
+
+.loginInput {
+    width: 380px;
+    padding-left: 0;
+    font-size: 14px;
+}
+
+.loginInput:focus {
+    border-color: #40a9ff;
+    outline: 0;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0) !important;
+    border-right-width: 1px !important;
+}
+
+.login-tabBtn {
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 0px;
+    color: black;
+}
+
+.login-btn>.ant-radio-button-wrapper-checked {
+    color: black;
+    border-bottom: 2px solid #2666f8 !important;
+}
+
+.ant-radio-button-wrapper:not(:first-child)::before {
+    display: none;
+}
+
+.ulDad {
+    width: 20%;
+    margin: 0 20px 0 0;
+    cursor: pointer;
+}
+
+.login-form-button {
+    width: 100%;
+    line-height: 50px;
+    height: 50px;
+    //color: #2666f8;
+    border-radius: 5px;
+}
+
+.container {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list {
+    width: 18%;
+    background: #fff;
+}
+
+.list ul {
+    width: 100%
+}
+
+.list ul li {
+    list-style-type: none;
+}
+
+.main {
+    width: 100%;
+    padding: 0 25px;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.head {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.tips {
+    height: 85px;
+    color: #000;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 85px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.ftMg {
+    width: 60%;
+    margin: 0 auto;
+    font-size: 16px;
+    margin-bottom: 30px;
+    border: none;
+}
+input::-webkit-input-placeholder {
+    /* placeholder字体大小  */
+    font-size: 12px;
+}
+input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    font-size:12px
+}
+input::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   font-size:12px
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+   font-size:12px
+}
+input::-ms-input-placeholder { /* Internet Explorer 10-11 */
+   font-size:12px
+}
+.btn {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 95px;
+    text-align: center;
+}
+
+.submit {
+    width: 390px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #2666f8;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+}
+
+.submitBtn {
+    background: #ccc;
+    cursor: not-allowed
+}
+
+.color {
+    color: #404040;
+}
+
+.margin {
+    margin-right: 10px
+}
+
+.pwd {padding-left: 10px;
+    width: 315px;
+    height: 40px;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    outline: none;
+}
+
+.flex50 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto !important;
+}
+
+.imgFather {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%
+}
+
+.mask {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 7px;
+    z-index: 999;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, .3);
+    border-radius: 50%;
+}
+
+input[type="radio"]+label::before {
+    content: "\a0";
+    /*不换行空格*/
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 18px;
+    width: 1em;
+    height: 1em;
+    margin-right: .4em;
+    border-radius: 50%;
+    border: 1px solid #2b5fff;
+    text-indent: .15em;
+    line-height: 1;
+}
+
+input[type="radio"] {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+input[type="radio"]:checked+label::before {
+    background-color: #2b5fff;
+    background-clip: content-box;
+    padding: .2em;
+}
+
+.mask {
+    display: none;
+}
+
+.imgFather:hover {
+    .mask {
+        display: flex
+    }
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+:host ::ng-deep .avatar-uploader>.ant-upload,
+ :host ::ng-deep {
+    position: relative;
+    top: 0;
+    width: 80px !important;
+    height: 80px !important;
+    border: none;
+    background: #fff
+}
+
+.flexCenter {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    height: 150px;
+}
+
+.person {
+    height: 80px;
+    background: #fff;
+    line-height: 80px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+//响应式
+@media screen and (max-width: 920px) {
+    .submit{
+        width: 315px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .ftMg{
+        width: 100%;
+    }
+    .submit{
+        width: 100%;
+    }
+    .pwd{
+        width: 70%
+    }
+    .ipt{width: 40%
+    }
+    .container {
+        display: flex;
+        flex-flow: column;
+    }
+    .inline-block {
+        width:calc(83% - 40px);
+        margin: 0 auto;
+    }
+    .flexUl {
+        display: flex;
+        justify-content: center;
+    }
+    .tabbar {
+        width: 33.3%;
+        display: inline-block;
+    }
+    .displayNone {
+        display: none;
+    }
+    .display0 {
+        display: block
+    }
+    .imgDad {
+        width: 100%;
+        height: 100%;
+    }
+    .flex-two {
+        display: flex;
+        flex-flow: column;
+    }
+    .text {
+        margin: 20px 0;
+        width: 100%;
+        height: 100%;
+        padding-top: 10px;
+    }
+    ul {
+        display: flex;
+        justify-content: center;
+    }
+    .ulDad {
+        width: 100%;
+    }
+    ui li {
+        width: 25%;
+    }
+    .ipt {
+        width: 80%
+    }
+    .person {
+        display: none;
+    }
+    
+}
+.text-c{
+    text-align: center;
+}
+.look{
+    width: 120px;
+    height: 40px;
+    border:1px solid rgb(80, 116, 237);
+    border-radius: 20px;
+    color: rgb(80, 116, 237);
+    background-color: rgb(255, 255, 255);
+}
+.look:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(123, 153, 253);
+}
+.no-look{
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    background-color: #e0e0e0;
+    color: #fff;
+}
+
+//绑定基因盒2
+.binding-box{
+    padding-bottom: 170px;
+    background: #fff;
+    text-align: center;
+    outline: none;
+}
+.binding-box .title{
+    padding: 40px 0;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+.binding-box .table{
+    width: 240px;
+    margin: 0px auto;
+    font-weight: 600;
+    text-align: left;
+}
+.binding-box .serial{
+    width: 240px;
+    margin: 0 auto;
+}
+.binding-box .binding{
+    width: 240px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 4px;
+}
+.error-color {
+    color: #fe3c3c;
+    margin-bottom: 0px;
+    text-align: left;
+}
+//弹窗
+.tplContent-p {
+    background: #f1f1f1;
+    font-size: 24px;
+    line-height: 66px;
+    text-align: center;
+    margin: 0;
+    font-weight: bold
+}
+.tplContent-wrap{
+    font-size: 14px;
+    color: #30353f;
+    margin-bottom: 20px;
+  }
+
+  .tplContent-wrap p{
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  .tplFooter{
+    line-height: 50px;
+    text-align: center;
+
+  }
+  .tplFooter button{
+    width: 160px;
+
+  }
+.mar-bo{
+    margin-bottom: 0;
+}
+.read {
+    width:240px;
+    margin:0 auto;
+    .l{
+        text-align: left 
+    }
+}
+.font-14{
+    font-size: 14px;
+}
+//绑定基因盒2

@@ -1,0 +1,17 @@
+<div class="tabbar">
+        <span class="home" [routerLink]="['/home']">顺堂生物 </span> / <span class="list" (click)="news()"> 新闻动态  </span> / <span> 正文</span>
+</div>
+ <div *ngIf="data" class="head">
+     
+    <span class="title">{{data.title}}</span>
+    <div class="time"> <span>{{data.author}}</span>
+        <span class="margin-l-20"> {{data.createAt | date: "yyyy-MM-dd"}}</span></div>
+    <div class="newsDetail-ul-wrap" *ngFor="let item of data.content as index">
+        <div *ngIf="item.value" class="padd">
+            {{item.value}}
+        </div>
+        <div *ngIf="item.imgUrl.length !== 0 ">
+            <img class="detailImg" src="{{item.imgUrl[0].url}}" alt="">
+        </div>
+    </div>
+</div>

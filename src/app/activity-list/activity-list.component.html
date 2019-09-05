@@ -1,0 +1,39 @@
+<nz-spin [nzSpinning]="isSpinning">
+  <div class="news"  >
+    <div class="container">
+<!--      *ngIf="itemList[1]['itemLength']==0"-->
+      <div  style="padding:  50px 0 "  *ngIf='artList.length == 0'>
+        <nz-empty></nz-empty>
+      </div>
+
+      <ul>
+
+        <li class="news-li" *ngFor=" let item of artList;" (click)="jumpActivity(item.id)" style="cursor: pointer">
+
+          <div class="news-li-l">
+            <img src="{{item.img.url}}" alt="">
+          </div>
+
+          <div class="news-li-r">
+            <p class="news-li-r-tit">
+              {{item.title}}
+            </p>
+            <p class="news-li-r-main">
+              {{item.summary}}
+            </p>
+
+            <p class="news-li-r-time">
+              {{item.updateAt | date:'yyyy-MM-dd HH:mm:ss'}}
+            </p>
+          </div>
+        </li>
+      </ul>
+
+
+      <div style="text-align: right;margin-right: 20px;margin-top: 20px" *ngIf=" artList.length !==0">
+        <nz-pagination (nzPageIndexChange)="changePage($event,2)" [nzPageIndex]="searhParams.page" [nzTotal]="total" [nzPageSize]="size"></nz-pagination>
+      </div>
+
+    </div>
+  </div>
+</nz-spin>

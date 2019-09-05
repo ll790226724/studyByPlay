@@ -1,0 +1,235 @@
+/* You can add global styles to this file, and also import other style files */
+
+body{
+  min-width: 320px;
+}
+
+.outline-none{
+  outline: none
+}
+
+.padd-0{
+  padding: 0;
+}
+
+
+.container{
+
+    max-width: 1200px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row{
+   margin-right: -15px;
+   margin-left: -15px;
+}
+.inline-block{
+    display: inline-block
+}
+
+.pull-right{
+    float: right;
+}
+
+li{
+  list-style: none;
+}
+ul{
+  padding: 0;
+}
+.ant-carousel .slick-dots li button {
+  height: 10px !important;
+  border-radius: 5px;
+}
+
+
+//注册
+.agreeModel  .ant-modal-header {
+      padding: 0;
+  border: none;
+}
+
+
+.agreeModel .ant-modal-body {
+  padding:35px 40px  ;
+  height: 455px;
+  overflow: auto;
+}
+
+
+.agreeModel  .ant-modal-footer{
+  border-radius: 0;
+}
+
+.padd-0-10 {
+  padding:0 10px
+}
+
+.padd-10-0 {
+  padding:10px 0;
+}
+
+
+.cursor-pointer{
+ cursor: pointer;
+}
+
+.f-18{
+  font-size: 18px;
+}
+
+.text-center {
+  text-align: center;
+  //max-width: 1200px;
+}
+
+.padd-r-20{
+  padding-right: 20px;
+}
+.padd-b-30{
+  padding-bottom: 30px;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+
+.text-r {
+  text-align: right;
+}
+
+.pos-re{
+  position: relative;
+}
+
+.f-14 {
+  font-size: 14;
+}
+
+.padd-l-20 {
+  padding-left: 20px;
+}
+
+.f-0 {
+  font-size: 0;
+}
+
+.margin-l-20 {
+  margin-left: 20px;
+}
+.block {
+  display: block;
+}
+
+.display-none {
+  display: none !important;
+}
+
+.shopList .ant-modal-body{
+  height: 400px !important;
+}
+
+
+
+@media screen and (max-width: 1200px){
+  .logo-media{
+    display: none !important;
+  }
+
+
+
+}
+
+@media screen and (min-width: 992px){
+  .header-ul {
+    display: block !important;
+  }
+  .media-left-logo{
+    display: none !important;
+
+  }
+
+  .welcome-banner-Wrap {
+    height: 500px !important;
+  }
+  .welcome-banner-content {
+    text-align: center;height: 500px !important;z-index: 999
+  }
+
+
+  .welcome-banner-img {
+    position: relative;z-index: -1;  width: 100%;  height: 500px;object-fit: cover ;   display: inline-block !important
+  }
+
+  .item-title {
+    text-align: center;
+    font-size: 32px;
+    line-height: 90px;
+    font-weight: bold;
+    color: black;
+  }
+
+}
+
+
+
+@media screen and (max-width: 992px) {
+  .ant-layout-header {
+    padding: 0 !important;
+
+  }
+  .header-menu-item {
+    display: block !important;
+    text-align: center !important;
+  }
+  .header-ul {
+    padding-top: 60px !important;
+
+  }
+  .media-menu-btn {
+    display: block !important;
+  }
+  .introduction_three{
+    display: block !important;
+    position: static !important;
+  }
+
+  .user-info{
+    font-size: 16px;
+  }
+  .menu-user-Btn{
+    display: none !important;
+  }
+  .header-menu-search {
+    display: block !important;
+    text-align: center !important;
+  }
+
+  //轮播图
+
+  .ctr-wrap .welcome-banner-Wrap {
+    height: 300px !important;
+  }
+
+  .welcome-banner-content {
+    text-align: center;height: 300px !important;z-index: 999
+  }
+
+  .welcome-banner-img {
+    position: relative;z-index: -1;  width: 100%;  height: 300px;object-fit: cover ;   display: inline-block !important
+  }
+
+
+  .item-title {
+    text-align: center;
+    font-size: 24px;
+    line-height: 60px;
+    font-weight: bold;
+    color: black;
+  }
+
+
+}

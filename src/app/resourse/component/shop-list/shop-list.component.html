@@ -1,0 +1,95 @@
+
+<nz-content >
+  <nz-carousel   [nzEnableSwipe]="false"    [nzAutoPlaySpeed]="3000" [nzAutoPlay]="isAutoPlay"  class="shop-banner-wap"   >
+    <div nz-carousel-content *ngFor="let item of array"  class="shop-banner-ctrl">
+    <h3 (mouseover)="isAutoPlay = false"   (mouseout)=" isAutoPlay = true" >
+      <a class="inline-block  shop-banner-a"  [href]="item.link" target="_blank">
+        <img  class="shop-banner-li" src="{{ item.url }}" alt="">
+      </a>
+    </h3>
+    </div>
+  </nz-carousel>
+
+
+</nz-content>
+<div class="shopList">
+  <div class="container">
+
+    <div *ngIf="!listData || listData.length==0 ">
+      <nz-empty></nz-empty>
+    </div>
+
+
+
+
+
+
+    <ul   nz-row>
+       <li  nz-col [nzXs]="{span:24}"  [nzLg]="{span:12}" class="vertical-top"   *ngFor="let item of listData "   [routerLink]="['/shop/detail/'+item.id]">
+         <div class="li-item-wrap">
+           <div class="li-item">
+             <img  class="li-item-img" [src]="item.img" alt="">
+             <h2  class="li-item-h2">{{item.name |  stringLenFilter:18 }}</h2>
+           </div>
+           <div class="li-item-content">
+             <h2 >{{item.name |  stringLenFilter:18 }}</h2>
+             <p> {{item.info  |  stringLenFilter:70 }}</p>
+
+
+
+             <div class="li-item-price">
+               <div class="item-price"><span>¥</span>{{item.price}}</div>
+               <div>
+                 <img class="cursor-pointer" src="assets/img/buy.png" alt=""   (click)="createTplModal(tplTitle, tplContent, tplFooter,$event,item.id)" >
+               </div>
+             </div>
+           </div>
+         </div>
+       </li>
+
+
+     </ul>
+
+  </div>
+</div>
+<ng-template #tplTitle >
+ <div style="text-align: right;font-size: 16px;padding:  10px">
+   <i style="cursor: pointer" nz-icon type="close" (click)="madalCancel()"></i>
+ </div>
+</ng-template>
+<ng-template #tplContent>
+  <div  nz-row>
+    <div  nz-col [nzXs]="24"   [nzSm]='12'style="font-size: 14px; text-align: center">
+      <img style="width: 100%;  max-width: 140px  " src="../../../../assets/img/Wxcode.jpg" alt="">
+      <p style="text-align: center; color: rgb(102, 102, 102);padding-bottom: 15px;border-bottom: 1px solid #e1e1e1 ">官方微信</p>
+      <p style="text-align: center;margin: 0">(010)59478634</p>
+      <p style="text-align: center">客服电话</p>
+    </div>
+    <div nz-col  [nzXs]="24" [nzSm]='12'   style="font-size: 14px; text-align: center">
+        <h2>您好</h2>
+      <p>感谢您的信任和青睐，</p>
+      <p>请联系我们，</p>
+      <p>购买您心仪的产品</p>
+
+
+      <button nz-button [nzType]="'primary'"   (click)="modalClick()"   style="height: 40px;background: #2666f8;margin-top: 40px"> 更多联系方式</button>
+
+    </div>
+
+  </div>
+
+
+
+</ng-template>
+<!--<ng-template #tplFooter>-->
+<!--  <div class="tplFooter">-->
+<!--    <button nz-button nzType="default"  (click)="destroyTplModal()" [nzLoading]="tplModalButtonLoading">-->
+<!--      取消-->
+<!--    </button>-->
+<!--    <button nz-button nzType="primary" (click)="EnterTplModal()" [nzLoading]="tplModalButtonLoading">-->
+<!--      确定-->
+<!--    </button>-->
+<!--  </div>-->
+
+
+<!--</ng-template>-->

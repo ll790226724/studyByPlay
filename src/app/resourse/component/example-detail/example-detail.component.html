@@ -1,0 +1,105 @@
+<div class="crumbs">
+    <div class="container">
+      <a [routerLink]="['/example']">报告示例</a>
+      <span>/</span>
+      <a [routerLink]="['/example/detail/'+testType.id]">{{testType.name}}</a>
+      <span>/</span>
+      <span style="padding-left: 5px;">{{reportDet.name}}</span>
+    </div>
+  </div>
+<div class="example">
+    <i class="pad-r-10" nz-icon type="info-circle"></i>以下内容为示例报告，具体以实际检测为准
+  </div>
+  
+  <div class="example-detail-header">
+    <div class="container">
+      <h2>{{reportDet.name}}</h2>
+     <div class="img" nz-col nzXs="24" nzSm="24" nzMd="11" nzLg="8" nzXl="7">
+      <img src="{{reportDet.img}}" alt="">
+      </div>
+      <div class="img-text" nz-col nzXs="24" nzSm="24" nzMd="13" nzLg="16" nzXl="17">
+          {{reportDet.intro}}
+        </div>
+      <div class="cle-both"></div>
+    </div>
+  </div>
+  <div class="container">
+  
+    <div class="detail-result">
+      <h2 class="result-h">检测结果</h2>
+      <!--1,营养需求，低中高三个都渲染，根据数据渲染对应等级的颜色-->
+      <div class="result-30 tet-cen" *ngIf="reportDet.showType==30">
+        <div class="bac-ff83 cor-fff" *ngIf="reportDet.resultNum < 1">低</div>
+        <div class="bac-e4" *ngIf="reportDet.resultNum > 1 || reportDet.resultNum == 1">低</div>
+        <div class="bac-e4" *ngIf="reportDet.resultNum != 1">中</div>
+        <div class="bac-ff83 cor-fff" *ngIf="reportDet.resultNum == 1">中</div>
+        <div class="bac-e4" *ngIf="reportDet.resultNum < 1 || reportDet.resultNum == 1">高</div>
+        <div class="bac-ff83 cor-fff" *ngIf="reportDet.resultNum > 1">高</div>
+      </div>
+      <!--2,罕见遗传病，携带未携带-->
+      <div class="result-content" *ngIf="reportDet.showType==10">
+        <h2>
+          {{reportDet.resultText}}
+        </h2>
+      </div>
+      <!--3,个人特质示例；高中低三个，根据数据只渲染一个-->
+      <div class="result-40 tet-cen" *ngIf="reportDet.showType==40">
+        <div class="bac-ff36 cor-fff" *ngIf="reportDet.resultNum < 1">低
+        </div>
+        <div class="bac-ff83 cor-fff" *ngIf="reportDet.resultNum == 1">中
+        </div>
+        <div class="bac-6ad54d cor-fff" *ngIf="reportDet.resultNum > 1">高
+        </div>
+      </div>
+      <!--4,药物代谢，文字展示-->
+      <div class="result-content" *ngIf="reportDet.showType==50">
+        <h2>
+          您的药物代谢能力较低
+        </h2>
+      </div>
+      <!--5,健康风险条形图-->
+      <div class="result-20" *ngIf="reportDet.showType==20">
+          <div class="le" [style.paddingLeft]="paddingleft">
+              <img src="../../../../assets/images/report-people-icon.png">
+          </div>
+          <div class="resultNum">{{reportDet.resultNum}}</div>
+          <div class="bar-chart"></div>
+          <div class="min">{{reportDet.min}}</div>
+          <div class="max">{{reportDet.max}}</div> 
+          <div class="dis-inl w-50 text-r">您的终生患病风险:</div>
+          <div class="dis-inl w-50">&nbsp;{{reportDet.reNum}}%</div>
+          <div class="dis-inl w-50 text-r">您的患病风险为中国人平均值的:</div>
+          <div class="dis-inl w-50">&nbsp;{{reportDet.resultNum}}倍</div>
+          <div class="dis-inl w-50 text-r">中国人终生患病风险:</div>
+          <div class="dis-inl w-50">&nbsp;{{reportDet.probability}}%</div>
+        </div>
+    </div>
+  
+    <div class="detail-result result-fix">
+      <h2 class="result-h">位点信息</h2>
+      <div class="site-head">
+        <div >基因位点</div>
+        <div >所属基因</div>
+        <div >基因型</div>
+        <div class="head">基因解读</div>
+      </div>
+      <div class="site-content" *ngFor="let item of testli">
+        <div >{{item.name}}</div>
+        <div >{{item.gene}}</div>
+        <div >{{item.type}}</div>
+        <div class="cont">{{item.expound}}</div>
+      </div>
+    </div>
+  
+    <div class="detail-result result-fix" *ngFor="let item of custom">
+        <h2 class="result-h">{{item.name}}</h2>
+        <div *ngFor="let li of item.content">
+          <div *ngIf="li.type == 1" class="content-text">{{li.value}}</div>
+          <div *ngIf="li.type == 2" class="content-img" >
+            <div *ngFor="let img of li.imgList">
+                <img class="content-img" src="{{img.url}}">
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>

@@ -1,0 +1,244 @@
+.example{
+  line-height: 40px; 
+  background: #fb9f6e;
+  color: #fff;
+  text-align: center
+}
+.pad-r-10{
+  padding-right: 10px
+}
+.testing-detail{
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 1px solid;
+}
+.testing-detail .head {
+  padding: 20px 20px 20px 50px;
+  text-align: center;
+  border-bottom: 1px solid;
+}
+.testing-detail .head .title{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 24px;
+  font-weight: 600;
+}
+.testing-detail .head .title-r{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 16px;
+  float: right;
+}
+.testing-detail .header{
+  text-align: center;
+}
+.header-img{
+  width: 360px;
+  padding: 20px 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+.header-text{
+  width: 800px;
+  padding: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+}
+.testing-detail .testing-result-head {
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  font-size: 24px;
+  font-weight: 600;
+}
+.testing-detail .esting-result-text{
+  padding: 20px 0;
+}
+
+
+.example-detail-header{
+  background: #fff;
+  padding: 60px 0 ;
+  h2{
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 35px;
+  }
+  p{
+    font-size: 14px;
+    color:#666666 ;
+    line-height: 22px;
+
+  }
+}
+
+.result-fix{
+  margin-top: 0 !important;
+  margin-bottom: 15px !important;
+  padding: 20px 100px  !important;
+
+}
+.detail-result{
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px #e1e1e1;
+  background: #fff;
+  padding: 0 100px 100px 100px;
+  .result-h{
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+  }
+  .result-head{
+    padding: 80px 0;
+    span{
+      vertical-align: middle;
+      padding-left: 10px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+  .result-content{
+    padding: 50px 0;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.11);
+    .th{
+      padding:20px 0;
+      border-bottom: 1px solid #e1e1e1;
+      margin: 0 10%;
+      .l{
+        width: 30%;
+        display: inline-block;
+        text-align: left;
+        font-size: 16px;
+        font-weight: 600;
+        padding-left: 15px;
+      }
+      .r{
+        width: 69.5%;
+        display: inline-block;
+        text-align: right;
+        font-size: 16px;
+        font-weight: 600;
+        .r-20{
+          width: 50%;
+          display: inline-block;
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+    }
+    .bac{
+      padding:20px 0;
+      border-bottom: 1px solid #e1e1e1;
+      margin: 0 10%;
+      cursor: pointer;
+      .l{
+        width: 30%;
+        display: inline-block;
+        text-align: left;
+        font-size: 16px;
+        padding-left: 15px;
+      }
+      .r{
+        width: 69.5%;
+        display: inline-block;
+        text-align: right;
+        font-size: 16px;
+        .r-40{
+          display: inline-block;
+          padding: 4px 8px;
+          color: #fff;
+          margin-right: 15px
+        }
+        .r-20{
+          width: 50%;
+          display: inline-block;
+        }
+        .r-30{
+          display: inline-block;
+          padding: 4px 8px;
+          margin-right: 1px
+        }
+      }
+
+    }
+  }
+
+}
+.pad-r-15{
+  padding-right: 15px;
+}
+.cor-fff{
+  color: #fff;
+}
+.cor-ff9277{
+  color: #ff9227;
+}
+.bac-ff8338 {
+  background-color: #ff8338;
+}
+.bac-ff36{
+  background-color: #ff3636;
+}
+.bac-ff83{
+  background-color: #ff8338;
+}
+.bac-6ad54d{
+  background-color: #6ad54d;
+}
+.bac:hover{
+  background-color: #f3f3f3;
+}
+.dis-inlin{
+  display: inline-block;
+}
+.text-cen{
+  text-align: center;
+}
+.text-right{
+  text-align: right;
+}
+
+.report-li-head{
+  .img{
+    width: 100%;
+    color:#fff;
+    // background-image: url(assets/images/report-bac-icon.png);
+  }
+  img{
+    width: 100%;
+  }
+  .name{
+    font-size: 40px;
+    padding-bottom:10px;
+    margin: -240px 0 0 40px;
+  }
+  .test{
+    font-size:24px;
+    margin: -170px 0 0 40px;
+  }
+}
+
+
+
+//面包屑
+.crumbs{
+  padding: 3px 100px 3px 95px;
+  background-color: #f8f8f8;
+}
+.crumbs a{
+  padding: 10px 5px;
+  cursor: pointer;
+  color: #aeaeae;
+}
+.crumbs a:hover{
+  color: #2666f8;
+}
+.crumbs span{
+  color: #aeaeae;
+}

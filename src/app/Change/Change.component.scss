@@ -1,0 +1,273 @@
+.home {
+    width: 700px;
+    margin: 95px auto 100px auto;
+    text-align: center;
+    background: #fff;
+    margin-bottom: 105px;
+}
+
+.code {
+    color: #2666f8;
+    font-size: 14px;
+}
+
+.phone {
+    padding-top: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-top: 50px;
+    width: 50%;
+    margin: 0 auto;
+    text-align: left
+}
+
+.subm {
+    background: #2666f8;
+    padding: 5px 0;
+    height: 48px;
+    width: 50%;
+    margin: 0 auto;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+
+input::placeholder {
+    color: #ccc;
+    font-size: 14px
+}
+
+.ipt1 {
+    width: 60%;
+    border: none;
+    outline: none;
+    margin-left: 2px;
+    
+}
+
+.position {
+    position: relative;
+    top: 0;
+}
+
+.test {
+    display: inline-block;
+    text-align: right;
+    cursor: pointer;
+    width: 39%;
+    float: right;
+    color: #2666f8
+}
+.position{
+    position: relative;
+    top: 0;
+}
+.position > span{
+    display: inline-block;
+}
+.radius{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    background: #6997ff;
+}
+.radiusTwo{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    background: #eeeeee;
+}
+.text{
+    width: 50px;
+    color: #eeeeee
+}
+.width{
+    position: relative;
+    bottom: 5px;
+    width: 10%;
+    height: 3px;
+    background: #6997ff;
+}.widthTwo{
+    position: relative;
+    bottom: 5px;
+    width: 10%;
+    height: 3px;
+    background: #eeeeee;
+}
+.widthTwos{
+    position: relative;
+    bottom: 5px;
+    width: 10%;
+    height: 3px;
+    background: #eeeeee;
+}
+.old {
+    font-size: 24px;
+    color: #000;
+    display: inline-block;
+    padding-bottom: 60px;
+    padding-top: 20px;
+}
+
+.wrning {
+    width: 50%;
+    margin: 0 auto;
+    color: #a0a0a0;
+    text-align: left;
+    margin-top: 10px
+}
+.wrningError{
+    width: 50%;
+    margin: 0 auto;
+    color: red;
+    text-align: left;
+    margin-top: 10px
+}
+
+.marginB {
+    margin-bottom: 80px;
+}
+
+.marginB10 {
+    margin-bottom: 10px
+}
+
+.twoError {
+    color: red;
+    text-align: left;
+    margin-top: 10px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.testCode {
+    width: 80%;
+    border: none;
+    outline: none;
+}
+
+.news {
+    font-size: 24px;
+    color: #000;
+    display: inline-block;
+    padding-bottom: 60px;
+    padding-top: 20px;
+}
+
+.twoIphon {
+    width: 80%;
+    border: none;
+    outline: none
+}
+
+.no {
+    cursor: not-allowed;
+}
+
+.error {
+    width: 50%;
+    margin: 0 auto;
+    color: red;
+    text-align: left;
+}
+
+.three {
+    width: 50%;
+    margin: 0 auto;
+    color: red;
+    text-align: left;
+}
+// 进度条高亮
+.plan-box {
+    display: flex;
+    margin-bottom: 70px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding-top: 40px;
+    .plan-line {
+      width: 117px;
+      height: 3px;
+      background-color: #6997ff;
+      border-radius: 1px;
+    }
+    .plan-circle {
+      width: 30px;
+      height: 30px;
+      margin-bottom: 15px;
+      border-radius: 50%;
+      background-color: #6997ff;
+      font-size: 14px;
+      color: #fff;
+      line-height: 30px;
+    }
+  }
+  .margin-left-30 {
+    margin-left: -30px;
+  }
+  .margin-right-30 {
+    margin-right: -30px;
+  }
+  .background-color-eee {
+    background-color: #eee!important;
+  }
+  .flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -32.5px;
+  }
+  .z-index-100 {
+    z-index: 1;
+  }
+  .color-6997ff {
+    color: #6997ff!important;
+  }
+  .color-eee {
+    color: #eee!important;
+  }
+@media screen and (max-width:810px) {
+    .display-none-800 {
+        display: none!important;
+      }
+      .width-0-800 {
+        width: 100%!important;
+        margin: 0!important;
+      }
+      .width-200-800 {
+        width: 200px!important;
+      }
+    .wrning{
+        width: 70%
+    }
+.phone{
+    width: 70%
+}
+    .home {
+        width: 80%;
+    }
+    .ipt1 {
+        width: 50%
+    }
+    .test {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .ipt1 {
+        width: 50%
+    }
+    .test {
+        width: 50%;
+    }
+}

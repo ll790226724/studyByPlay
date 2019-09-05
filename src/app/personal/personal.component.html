@@ -1,0 +1,274 @@
+<div class="inline-block" nz-row
+    style="display: block;;max-width: 1200px; width: 100%;margin: 0 auto;  border-radius: 5px;" >
+    <div class="container" style="margin-bottom: 110px">
+        <div nz-col nzMd="6" [nzSm]="24" class="ulDad" class="inline-block">
+            <ul nz-col nzMd="24" [nzSm]="24">
+                <li class="person">
+                    个人中心
+                </li>
+                <li *ngFor="let item of navbarList index as i" [routerLink]="['/personal/'+i]"
+                    [ngClass]="{ 'click': i == number }" class="tabbar">
+                    <span title>
+                        <span>{{item.name}} </span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div nz-col nzMd="18" class="inline-block" style="width:calc(83% - 20px);vertical-align: top;">
+            <div nz-col nzMd="24" [nzSm]="24" *ngIf="activeItem==0" style="background: #fff;">
+                <div class="tips pd20">
+                    个人信息
+                </div>
+                <div class="flexCenter">
+                    <div class="Center">
+                        <img *ngIf="!headImg&&!show" class="head" src="../../assets/img//head.png" alt="">
+                        <img class="head" *ngIf="headImg&&!show" src="{{headImg}}" alt="">
+                    </div>
+                    <div class="flex50">
+                        <nz-upload class="avatar-uploader" nzAction="/a/u/img/img" *ngIf="show" nzName="file"
+                            nzListType="picture-card" [nzShowUploadList]="false" [nzBeforeUpload]="beforeUpload"
+                            [nzPreview]="handlePreview" [nzShowUploadList]="showUploadList"
+                            (nzChange)="handleChange($event)">
+                            <div class="imgFather">
+                                <img *ngIf="!headImg&&show" class="avatar" src="../../assets/img//head.png" alt="">
+                                <img *ngIf="headImg" [src]="headImg" class="avatar">
+                                <div class="mask">
+                                    <span>修改头像</span>
+                                </div>
+                            </div>
+                            <nz-modal [nzVisible]="previewVisible" [nzContent]="modalContent" [nzFooter]="null"
+                                (nzOnCancel)="previewVisible = false">
+                                <ng-template #modalContent>
+                                    <img [src]="previewImage" [ngStyle]="{ width: '100%' }" />
+                                </ng-template>
+                            </nz-modal>
+                        </nz-upload>
+                    </div> <br>
+                </div>
+                <div class="textAlign">
+                    <span *ngIf="show" class="color-red font12">
+                    </span><span *ngIf="show" class="fon12 colora4">
+                        <span class="color-red">*</span> 请上传大小不超过2M, <br>格式为JGP/BMP/PNG的图片</span>
+                    <span *ngIf="false" class="wrning">请按照提示提交</span>
+                </div>
+
+                <div>
+                    <div class="tips ftMg">
+                        <span class="margin">基本信息</span>
+                        <span class="ipt nick">{{params.nick}}</span><span class="hidd">换绑</span><br>
+
+                    </div>
+                    <div class="ftMg color Center">
+                        <span class="margin">姓名</span>
+                        <span *ngIf="!show" class="ipt border">{{params.nick}}
+                        </span> <input *ngIf="show" [(ngModel)]="params.nick" maxlength="20" (keyup)="sum($event)"
+                            class="ipt background"  type="text"><span class="hidd">换绑</span><br>
+                        <span *ngIf="name" class="color-red font12">请输入正确格式的昵称</span>
+
+                    </div>
+                    <div class="ftMg color Center">
+                        <span class="margin">性别</span> <span *ngIf="!show"
+                            class="ipt border">{{params.sex== 1 ? '男' :' 女'}}</span>
+                        <nz-radio-group class="ipt border" *ngIf="show" [(ngModel)]="params.sex">
+                            <label nz-radio nzValue='1'>男</label>
+                            <label nz-radio nzValue='2'>女</label>
+                        </nz-radio-group>
+                        <span class="hidd">换绑</span>
+
+                    </div>
+                    <div class="ftMg color Center">
+                        <span class="margin">手机</span>
+                        <span *ngIf="!show" class="ipt border">{{params.mobile}}
+                            <span *ngIf="!show" (click)="huanbang()" class="hB marginL">换绑</span>
+                        </span>
+                        <span *ngIf="!show" class="hidd">换绑</span>
+                        <span *ngIf="show" class="ipt background mobile">{{params.mobile}}</span>
+                        <span *ngIf="show" class="hidd">换绑</span>
+                    </div>
+                    <div class="ftMg color Center">
+                        <span class="margin">生日</span> <span *ngIf="!show" class="ipt border">{{birthday}}</span>
+                        <nz-date-picker class="birthday" *ngIf="show" [(ngModel)]="birthday" [nzStyle]="style"
+                            nzFormat="yyyy-MM-dd">
+                        </nz-date-picker>
+                        <span class="hidd">换绑</span>
+                    </div>
+                    <div class="btn-father">
+                        <button *ngIf="!show" class="edit" (click)="edit()">编辑</button>
+                        <button *ngIf="show" class="top" (click)="top()">取消</button>
+                        <button *ngIf="show" class="edit" (click)="upDate()">保存</button>
+                        <span *ngIf="show" class="hidd">换绑</span>
+                    </div>
+                </div>
+            </div>
+            <div nz-col nzMd="24" [nzSm]="24" *ngIf="activeItem==1">
+                <div class="containers">
+                    <div class="main">
+                        <div class="tips">
+                            修改密码
+                        </div>
+                        <form nz-form [formGroup]="validateForm">
+                            <div *ngIf="showPwd">
+                                <div class="ftMg color mg10">
+                                    <span class="margin">当前密码</span>
+                                    <input class="pwd" placeholder="请输入当前密码" formControlName="oldPwd" minlength="6"
+                                        maxlength="16" type="password" (blur)='before(validateForm.value)'> <br>
+                                </div>
+                                <div class="ftMg color mg10">
+                                    <span class="margin">新的密码</span>
+                                    <input class="pwd" placeholder="请输入由数字、字母、下划线组成的6-16位密码" minlength="6"
+                                        maxlength="16" formControlName="newPwd" type="password"
+                                        (blur)='newPassword(validateForm.value)'>
+
+                                </div>
+                                <div class="ftMg color mg40">
+                                    <span class="margin">确认密码</span>
+                                    <input class="pwd" placeholder="请再次输入密码" minlength="6" maxlength="16"
+                                        formControlName="newTwoPwd" type="password"
+                                        (blur)='newTwoPwd(validateForm.value)'>
+                                </div>
+                                <div class="ftMg color ">
+                                    <span class="margin" style="visibility: hidden">新的密码</span>
+                                    <button class="submit" [disabled]="!validateForm.valid "
+                                        [ngClass]="{'submitBtn': !validateForm.valid}"
+                                        (click)="submit(validateForm.value)">下一步</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div *ngIf="!showPwd" class="color login">恭喜您,修改密码成功！稍后为您跳转至登录页面</div>
+                        <div *ngIf="!showPwd" class="btn">
+                            <button class="submit">立即登录</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--绑定基因盒-->
+            <div *ngIf="activeItem==2">
+                <div class="gene-box-content">
+                    <div class="binding-box">
+                        <div class="title">绑定基因盒</div>
+                        <form nz-form [formGroup]="valistdateForm" class="content">
+                            <nz-form-item class="mar-bo">
+                                <div class="table">基因盒序列号</div>
+                                <nz-form-control class="serial">
+                                    <input nz-input type="tel" placeholder="请输入基因盒序列号"
+                                        onkeyup="if(value.length>10) value=value.slice(0,10)" formControlName="serial"
+                                        [(ngModel)]="paramsDtate.serial">
+                                    <nz-form-explain class="error-color">
+                                        {{paramsDtate.errorMes}}
+                                    </nz-form-explain>
+                                </nz-form-control>
+                            </nz-form-item>
+                            <nz-form-item class="read">
+                                <nz-form-control class="l">
+                                    <label nz-checkbox formControlName="agree">
+                                        <span>我已阅读并同意</span>
+                                    </label>
+                                    <a (click)="createTplModal(tplTitle, tplContent, tplFooter)">《隐私协议》</a>
+                                </nz-form-control>
+                            </nz-form-item>
+                            <div class="read">
+                                <button nz-button nzType="primary" type="button"
+                                    [disabled]="!valistdateForm.valid || valistdateForm.value.agree==false"
+                                    class="ant-btn ant-btn-primary binding"
+                                    (click)="postBinding()"><span>提交</span></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--我的基因盒-->
+            <div *ngIf="activeItem==3">
+                <div class="gene-box-content">
+                    <form nz-form class="gene-box-head">
+                        <div class="binding" [routerLink]="['/personal/'+2]">
+                            <div class="marginR"><img src="../../../assets/images/binding.png"></div>
+                            <div>绑定基因盒</div>
+                        </div>
+                        <div class="marginT">如果未进行绑定，我们将不会处理您的样本</div>
+                    </form>
+                    <div class="r text-c" *ngIf="!binding">
+                        <div>您还没有自己的专属基因盒，请先<span class="pay" [routerLink]="['/shop']">购买产品</span></div>
+                    </div>
+                    <div class="r" nz-row *ngIf="binding">
+                        <div class="report-li" nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="12" nzXl="8" *ngFor="let item of itemsParams">
+                            <img src="{{item.img}}">
+                            <div class="one-line" title="{{item.name}}">{{item.name}}</div>
+                            <div class="red">{{item.price}}元</div>
+                            <div>序列号：{{item.serial}}</div>
+                            <div *ngIf="item.status == 40">
+                                <button nz-button nzType="primary" type="button" class="look"
+                                    [routerLink]="['/testreport/'+item.boxId]"><span>查看报告</span></button>
+                            </div>
+                            <div *ngIf="item.status != 40">
+                                <button type="button" class="no-look" disabled><span>报告生成中</span></button>
+                            </div>
+                        </div>
+                        <div class="pay" nz-col nzSpan="24">
+                            <button nz-button nzType="primary" type="button" [routerLink]="['/shop']"
+                                class="ant-btn ant-btn-primary">
+                                <img class="pay-icon" style="width: 25px;" src="../../../assets/images/pay.png">
+                                <div class="pay-text">继续购买</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- 弹窗 -->
+<ng-template #tplTitle>
+    <h2 class="tplContent-p">
+        隐私协议
+    </h2>
+</ng-template>
+<ng-template #tplContent>
+    <div class="font-14">
+        <div class="tplContent-wrap">
+            <p>顺唐生物非常重视您的隐私，因此，我们制定了一系列在对您的个人数据的获取、使用、存储及处理流程的保护方案，以及不断完善和更新保护您个人隐私的政策，并帮助您更好的了解这些政策，确保您的隐私得到安全保障。</p>
+        </div>
+        <div class="tplContent-wrap">
+            <p>1.个人数据的收集和处理 </p>
+            <p>我们相信您提交您的基因数据，是为了更好的得到个人健康信息、疾病特征以及其他相关的信息内容的呈现，所以在没有得到您的允许之前，我们将会对您的基因数据和个人资料信息按照行业内严格的方式保存和保密，除服务协议另有约定外，不对任何人开放。
+            </p>
+        </div>
+    </div>
+
+    <div class="tplContent-wrap">
+        <p>2.个人数据的使用和披露</p>
+        <p>为提供您所要求的产品和服务，顺唐生物可将您的个人数据用于基因相关的数据挖掘，用于您的基因报告的更新和推送。</p>
+        <p>根据您的意愿或者法律法规，顺唐生物会在以下情形全部或部分披露您的信息：经您事先同意，向第三方披露；根据法律的有关规定，或者行政或司法机构的要求，向第三方或者行政、司法机构披露；为提供您所要求的产品和服务，而必须和第三方分享您的个人信息；其它根据法律、法规或者网站政策认为合适的披露。
+        </p>
+    </div>
+    <div class="tplContent-wrap">
+        <p>3.安全性 </p>
+        <p>顺唐生物采用合理的技术和组织安全措施来全力保护我们所控制的数据不被意外或故意地操纵、丢失、损毁或被擅自存取。</p>
+        <p>当您在顺唐生物提供的计算机网络程序或移动终端软件上完成账户建立后，您应在能力范围内采取措施保护自身账户安全，并知晓以下情形，包括但不限于：</p>
+        <div>a)
+            本应用账号均有安全保护功能，请妥善保管您的用户名及密码信息。本应用将通过对用户密码进行加密等安全措施确保您的信息不丢失，不被滥用和变造。尽管有前述安全措施，但同时也请您注意在信息网络上不存在“完善的安全措施”。
+        </div>
+        <div>b)
+            在使用本应用网络服务进行网上交易时，您不可避免的要向交易对方或潜在的交易对方披露自己的个人信息，如联络方式或者邮政地址。请您妥善保护自己的个人信息，仅在必要的情形下向他人提供。如您发现自己的个人信息泄密，尤其是本应用用户名及密码发生泄露，请您立即联络本应用客服，以便本应用采取相应措施。
+        </div>
+    </div>
+    <div class="tplContent-wrap">
+        <p>我们承诺保护您的隐私，因为我们尊重我们每个用户。我们尽最大努力去做好，并希望为此能赢得您的信任！</p>
+    </div>
+
+
+</ng-template>
+<ng-template #tplFooter>
+    <div class="tplFooter">
+        <button nz-button nzType="default" (click)="destroyTplModal()" [nzLoading]="tplModalButtonLoading">
+            不同意
+        </button>
+        <button nz-button nzType="primary" (click)="EnterTplModal()" [nzLoading]="tplModalButtonLoading">
+            同意
+        </button>
+    </div>
+
+
+</ng-template>

@@ -1,0 +1,303 @@
+<nz-content class="ctr-wrap" >
+  <nz-carousel class="welcome-banner-Wrap"  [nzEnableSwipe]="false"    [nzAutoPlaySpeed]="3000"  [nzAutoPlay]="isAutoPlay"     >
+    <div nz-carousel-content *ngFor="let item of array"  class="welcome-banner-content">
+      <h3 (mouseover)="isAutoPlay = false"   (mouseout)=" isAutoPlay = true" >
+        <a class="inline-block welcome-banner-a"  [href]="item.link" target="_blank">
+          <img  class="welcome-banner-img"  src="{{ item.url }}" alt="">
+        </a>
+      </h3>
+    </div>
+  </nz-carousel>
+</nz-content>
+
+<div class="welcome-bg"  *ngIf="artImg">
+  <nz-content  class='container'>
+    <div  class="home-item">
+<!--      <h2 class="item-title" style="position: relative;">人气活动-->
+
+<!--        <span class=" welcome-act-more"  [routerLink]="['/activityList']" > 查看更多 ></span>-->
+<!--      </h2>-->
+      <div class="f-0">
+        <div class="item-img">
+          <img [src]="artImg.img" class="item-img-a"   (click)="jumpActivity(artImg.id)"  alt="">
+        </div>
+      </div>
+
+    </div>
+  </nz-content>
+</div>
+
+
+<div class="home-classify">
+  <nz-content class="container">
+      <h2 class="item-title  shopClassify-h ">产品分类</h2>
+      <div>
+        <ul  nz-row>
+          <li  nz-col  [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 8 }" >
+            <img style="object-fit: cover" src="assets/img/home-baby.jpg" alt="">
+            <div class="home-classify-content">
+              <h3 class="classify-content-h">儿童成长</h3>
+              <p class="classify-content-p">个人特质检测、罕见遗传病检测、安全用药检测，</p>
+              <p class="classify-content-p">发掘儿童潜能，关爱儿童健康，呵护儿童成长</p>
+            </div>
+
+          </li>
+          <li nz-col  [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 8 }" >
+            <img  style="object-fit: cover" src="assets/img/home-male.jpg" alt="">
+            <div class="home-classify-content">
+              <h3 class="classify-content-h">青年关怀</h3>
+              <p class="classify-content-p">男女高发肿瘤风险检测、常见疾病风险检测、</p>
+              <p class="classify-content-p">营养需求检测、运动能力检测，健康生活</p>
+            </div>
+
+          </li>
+          <li  nz-col  [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 8 }" >
+            <img style="object-fit: cover"  src="assets/img/home-women.jpg" alt="">
+            <div class="home-classify-content">
+              <h3 class="classify-content-h" id="serviceProcess">老年健康</h3>
+              <p class="classify-content-p">慢病风险检测、肿瘤风险检测、营养需求检测、  </p>
+              <p class="classify-content-p">个性化用药检测，关注老年健康，提高生活品质</p>
+            </div>
+
+          </li>
+        </ul>
+      </div>
+
+  </nz-content >
+</div>
+
+
+<div class="home-how">
+  <nz-content class="container">
+    <h2 class="item-title" style="line-height: 180px">如何采样</h2>
+    <ul nz-row >
+      <li  nz-col  [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 8 }" >
+        <img src="assets/images/home-how-shop.png" alt="">
+        <p class="how-h">在线购买</p>
+        <p class="how-content">购买之后，我们会在24小时内将样本采集盒交由快递发送给您。</p>
+      </li>
+      <li nz-col  [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 8 }" >
+        <img src="assets/images/home-how-center.png" alt="">
+        <p class="how-h">唾液采集</p>
+        <p class="how-content">根据说明书，在家采集口腔上表皮细胞，然后将原包装回寄到顺唐生物检测中心，到付即可。</p>
+      </li>
+      <li nz-col  [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 8 }" >
+        <img src="assets/images/home-how-right.png" alt="">
+        <p class="how-h">报告生成</p>
+        <p class="how-content">检测结果会在两周后生成，我们会短信通知您登录顺唐生物官网查阅检测报告。</p>
+      </li>
+    </ul>
+
+  </nz-content >
+
+</div>
+
+<div class="home-why">
+
+
+    <img class="why-img" src="assets/images/home-why.jpg" alt="">
+    <nz-content  class="container home-why-warp" >
+
+      <ul  nz-row >
+        <li class="home-why-li"   nz-col  [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 8 }">
+          <div class="home-why-info">
+          <h2 class="item-title home-why-h">
+            顺唐基因
+          </h2>
+          <!-- <p class="item-why-p">帮助客户更加了解自己，放置一句slogan</p> -->
+        </div>
+        </li>
+        <li class="item-why-li"  nz-col  [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 8 }">
+         <div class="why-li-wrap">
+           <div class="why-li-icon">
+             <img src="assets/img/home-ico-1.png" alt="">
+           </div>
+           <div class="why-li-title">
+             产品优势
+           </div>
+         </div>
+          <div class="why-li-content">
+            <p>
+              覆盖全面、多元化，可个性定制，目前已 经研发详细解读项目400+，筛查项目120 0+，针对不同人群可灵活组合。
+            </p>
+          </div>
+
+        </li>
+        <li class="item-why-li"  nz-col  [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 8 }" >
+          <div class="why-li-wrap">
+            <div class="why-li-icon">
+              <img src="assets/img/home-ico-2.png" alt="">
+            </div>
+            <div class="why-li-title">
+              技术优势
+            </div>
+          </div>
+          <div class="why-li-content">
+            <p>
+              采用国际先进illumina设备，最新权威的 检测方法，测序准确率达99%以上。 <br>
+            </p>
+          </div>
+
+        </li>
+        <li class="item-why-li"   nz-col  [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 8 }">
+          <div class="why-li-wrap">
+            <div class="why-li-icon">
+              <img src="assets/img/home-ico-3.png" alt="">
+            </div>
+            <div class="why-li-title">
+              数据优势
+            </div>
+          </div>
+          <div class="why-li-content">
+            <p>
+              使用专为亚洲人群设计的ASA基因芯片， 覆盖全面的亚裔人基因数据库，并且我们 承诺及时整合最新的科研成果。
+            </p>
+          </div>
+
+        </li>
+        <li class="item-why-li"   nz-col  [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 8 }">
+          <div class="why-li-wrap">
+            <div class="why-li-icon">
+              <img src="assets/img/home-ico-4.png" alt="">
+            </div>
+            <div class="why-li-title">
+              服务优势
+            </div>
+          </div>
+          <div class="why-li-content">
+            <p>
+              国内外著名高校和科研院所的专家团队为 您解读检测结果，由专业的遗传咨询师、 营养师、健身教练制定个性化解决方案。
+            </p>
+          </div>
+
+        </li>
+        <li class="item-why-li"   nz-col  [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 8 }">
+          <div class="why-li-wrap">
+            <div class="why-li-icon">
+              <img src="assets/img/home-ico-5.png" alt="">
+            </div>
+            <div class="why-li-title">
+              渠道优势
+            </div>
+          </div>
+          <div class="why-li-content">
+            <p>
+              与多家测序服务商、试剂供应商签订服务 协议，并与保险企业、健身机构、医院、 教育机构，建立长久、稳定的合作关系。
+            </p>
+          </div>
+
+        </li>
+
+      </ul>
+
+
+    </nz-content >
+
+</div>
+
+
+<div class="home-whyList">
+  <div class="container">
+    <h2 class="item-title" style="margin: 0">为什么要基因检测</h2>
+    <p class="whyList-p">如果您在此处未看到您的问题，请联系我们</p>
+    <ul  nz-row>
+      <li class="whyList-li"  nz-col   [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 7 }">
+        <h2 class=" whyList-li-p">
+          什么是基因？
+        </h2>
+        <p class="whyList-li-content">
+          基因，又叫做遗传因子，它是DNA分子上携带有遗 传信息并具有遗传效应的功能片段。基因支持着生 命的基本构造和性能。生物体的生、长、衰、病、老、死等一切生命现象都与基因有关。它也是决定生命健康的内在因素。基因和环境互相依赖，演绎着生命的进程。
+        </p>
+<!--        <img src="assets/images/home-unofo.png" alt="">-->
+      </li>
+      <li class="whyList-li"  nz-col  [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 7 }">
+        <h2 class=" whyList-li-p">
+          什么是基因检测？
+        </h2>
+        <p class="whyList-li-content"  >
+          基因检测是DNA进行检测的技术，通过特定设备对被检测者细胞中的DNA分子信息进行检测，分析其 所含有的基因类型、基因异常或缺陷的一种方法，使人们能了解自己的基因信息，发掘自身潜力，预知疾病风险。
+        </p>
+<!--        <img src="assets/images/home-unofo.png" alt="">-->
+      </li>
+      <li class="whyList-li"   nz-col [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 7 }">
+        <h2 class=" whyList-li-p">
+          基因检测有什么用？
+        </h2>
+        <p class="whyList-li-content" id="peopleStory">
+          基因检测技术能帮助我们在疾病发生前就发现风险 因子，可以指导人们有针对性地进行疾病预防，符 合“治未病”和“未病先防、既病防变”的健康观。还可以帮助人们更好的认识自己，指导健康生活，如合理膳食、科学运动、个性化安全用药的指导、有针对性的肌肤管理等。
+        </p>
+<!--        <img src="assets/images/home-unofo.png" alt="">-->
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+
+<div class="home-story" >
+  <div class="container" nz-row   nzType="flex" nzJustify="center" nzAlign="top">
+    <h2 class="item-title"  nz-col [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 24 }" >关于遗传基因的用户故事</h2>
+
+    <p class="whyList-p"  nz-col [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 24 }"   style="font-size: 20px;font-weight: bold;margin-top: 40px;color: black">{{storyTitle}}</p>
+
+    <p class="whyList-main" nz-col [nzXs]="{ span: 18}  "   [nzLg]="{ span: 20 }" >
+      {{storyMain}}
+    </p>
+    <ul class="whyList-ava-ul"  nz-col [nzXs]="{ span: 24 }  "   [nzLg]="{ span: 24 }" >
+      <li class="whyList-ava"  (click)="changeStory(item)" [ngClass]="{'ishover':item.isSelect}"  *ngFor="let item of storyArr ; ">
+
+
+        <img class="whyList-img"     [src]="item.img" alt="">
+        <div class="whyList-img-bg"  *ngIf="!item.isSelect"></div>
+        <p class="whyList-story-name">
+          {{item.author}}
+        </p>
+      </li>
+
+    </ul>
+  </div>
+
+</div>
+
+
+<!--<div class="home-a">-->
+<!--    <div class="container">-->
+<!--      <ul>-->
+<!--        <li>-->
+<!--          <img src="assets/images/a-demo.png" alt="">-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <img src="assets/images/a-demo.png" alt="">-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <img src="assets/images/a-demo.png" alt="">-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <img src="assets/images/a-demo.png" alt="">-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <img src="assets/images/a-demo.png" alt="">-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <img src="assets/images/a-demo.png" alt="">-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <img src="assets/images/a-demo.png" alt="">-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <img src="assets/images/a-demo.png" alt="">-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <img src="assets/images/a-demo.png" alt="">-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <img src="assets/images/a-demo.png" alt="">-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+
+<!--</div>-->
+
+
+
+

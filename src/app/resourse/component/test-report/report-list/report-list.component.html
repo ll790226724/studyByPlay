@@ -1,0 +1,98 @@
+<div class="report-li-head">
+  <div class="img">
+    <img src="{{reportLi.imgBanner}}">
+    <div class="name">{{test.name}}</div>
+    <div class="test">{{testli.length}}项目</div>
+  </div>
+</div>
+<div class="crumbs">
+    <a [routerLink]="['/home']">顺唐生物</a>
+    <span>/</span>
+    <a [routerLink]="['/personal/0']">个人中心</a>
+    <span>/</span>
+    <a [routerLink]="['/personal/3']">我的基因盒</a>
+    <span>/</span>
+    <a (click)="getTestType()">{{test.name}}</a>
+    <span>/</span>
+    <span style="padding-left: 5px;">{{reportLi.name}}</span>
+</div>
+<div class="detail-result">
+  <div class="container">
+    <div class="result-head">
+      <img class="dis-inlin" src="../../../../../assets/images/items-d-c.png">
+      <span>{{reportLi.detail}}</span>
+    </div>
+  </div>
+  <div class="container">
+  <div class="result-content" *ngIf="reportLi.showType == 40">
+    <div class="th">
+      <div class="l">项目</div>
+      <div class="r">检测结果</div>
+    </div>
+    <div class="bac" (click)="getReportDet(item.detId)" *ngFor="let item of testli">
+      <div class="l">{{item.name}}</div>
+      <div class="r">
+        <div class="r-40 bac-ff36" *ngIf="item.resultNum < 1">低
+        </div>
+        <div class="r-40 bac-ff83" *ngIf="item.resultNum == 1">中
+        </div>
+        <div class="r-40 bac-6ad54d" *ngIf="item.resultNum > 1">高
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="result-content" *ngIf="reportLi.showType == 10">
+    <div class="th">
+      <div class="l">项目</div>
+      <div class="r">检测结果</div>
+    </div>
+    <div class="bac" (click)="getReportDet(item.detId)" *ngFor="let item of testli">
+      <div class="l">{{item.name}}</div>
+      <div class="r pad-r-15">{{item.resultText}}</div>
+    </div>
+  </div>
+  <div class="result-content" *ngIf="reportLi.showType == 20">
+    <div class="th">
+      <div class="l">项目</div>
+      <div class="r">
+        <div class="r-20 text-cen ">风险系数/倍</div>
+        <div class="r-20 text-right">人群发病率(仅供参考)
+        </div>
+      </div>
+    </div>
+    <div class="bac" (click)="getReportDet(item.detId)" *ngFor="let item of testli">
+      <div class="l">{{item.name}}</div>
+      <div class="r">
+        <div class="r-20 text-cen cor-ff9277">{{item.resultNum}}</div>
+        <div class="r-20 text-right pad-r-15">{{item.probability}}%</div>
+      </div>
+    </div>
+  </div>
+  <div class="result-content" *ngIf="reportLi.showType == 30">
+    <div class="th">
+      <div class="l">项目</div>
+      <div class="r">检测结果</div>
+    </div>
+    <div class="bac" *ngFor="let item of testli" (click)="getReportDet(item.detId)">
+      <div class="l" [routerLink]="['/example/detail']">{{item.name}}</div>
+      <div class="r" *ngIf="item.resultNum < 1">
+        <div class="r-30 bac-ff8338 cor-fff">低</div>
+        <div class="r-30">中</div>
+        <div class="r-30">高</div>
+      </div>
+      <div class="r" *ngIf="item.resultNum == 1">
+        <div class="r-30">低</div>
+        <div class="r-30 bac-ff8338 cor-fff">中
+        </div>
+        <div class="r-30">高</div>
+      </div>
+      <div class="r" *ngIf="item.resultNum > 1">
+        <div class="r-30">低</div>
+        <div class="r-30">中</div>
+        <div class="r-30 bac-ff8338 cor-fff">高
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
